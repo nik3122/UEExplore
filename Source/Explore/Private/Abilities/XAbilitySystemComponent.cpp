@@ -38,12 +38,16 @@ TSubclassOf<UXGameplayAbility> UXAbilitySystemComponent::GetNextAbilityByClass(T
 			TSubclassOf<UXGameplayAbility> NewClass = FoundSpec.Ability->GetClass();
 			if (IsValid(NewClass))
 			{
-				GEngine->AddOnScreenDebugMessage(0, 5.f, FColor::Blue, FString::Printf(TEXT("%s"), *NewClass->GetName()));
-
 				const UXGameplayAbility* NewCDO = NewClass.GetDefaultObject();
-				GEngine->AddOnScreenDebugMessage(0, 5.f, FColor::Yellow, FString::Printf(TEXT("%s"), *NewCDO->Next->GetName()));
-
-				return NewCDO->Next;
+				if (IsValid(NewCDO))
+				{
+					GEngine->AddOnScreenDebugMessage(0, 5.f, FColor::Yellow, FString::Printf(TEXT("%s"), *NewCDO->Next->GetName()));
+					return NewCDO->Next;
+				}
+				else
+				{
+					UE_LOG(LogTemp, Warning, TEXT("Invalid CDO...??"));
+				}
 			}
 		}
 	}

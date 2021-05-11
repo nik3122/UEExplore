@@ -28,14 +28,6 @@ float AXCharacterBase::GetStamina()
 void AXCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
-
-	for (TSubclassOf<UXCombo> combo : Combos)
-	{
-		UXCombo* mycombo = Cast<UXCombo>(combo.GetDefaultObject());
-		UE_LOG(LogTemp, Warning, TEXT("Loaded %s"), *mycombo->GetName());
-		UE_LOG(LogTemp, Warning, TEXT("Loaded %d"), mycombo->ComboId);
-
-	}
 	AttributeSet->InitHealth(100.0f);
 	AttributeSet->InitStamina(50.0f);
 }
