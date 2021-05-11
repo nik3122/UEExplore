@@ -13,5 +13,19 @@ UCLASS()
 class EXPLORE_API UXGameplayAbility : public UGameplayAbility
 {
 	GENERATED_BODY()
-	
+
+
+public:
+	UPROPERTY(BlueprintReadonly, EditAnywhere)
+	TSubclassOf<UXGameplayAbility> Next;
+
+	UFUNCTION(BlueprintCallable)
+	UXGameplayAbility* GetNextAbility();
+
+	UFUNCTION(BlueprintCallable)
+	void LoadNextAbility();
+
+private:
+	UPROPERTY()
+	UXGameplayAbility* _Next;
 };
