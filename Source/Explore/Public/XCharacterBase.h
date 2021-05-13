@@ -59,8 +59,13 @@ protected:
 	// Implement IAbilitySystemInterface
 	virtual class UXAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
+	/** Get abilities that this character can afford to activate */
 	UFUNCTION(BlueprintCallable)
-	void GetAffordableAbilities(FGameplayTagContainer TagContainer, TArray<UXGameplayAbility*>& MatchingAbilities) const;
+	void GetAffordableAbilities(TArray<UXGameplayAbility*>& MatchingAbilities) const;
+	
+	/** Get abilities that this character can afford to activate, by tag */
+	UFUNCTION(BlueprintCallable)
+	void GetAffordableAbilitiesByTag(FGameplayTagContainer TagContainer, TArray<UXGameplayAbility*>& MatchingAbilities) const;
 
 	/* Exposes method to get the class of the ability linked to the one give, if exists. */
 

@@ -69,8 +69,17 @@ UXAbilitySystemComponent* AXCharacterBase::GetAbilitySystemComponent() const
  	return AbilitySystemComponent;
 }
 
-void AXCharacterBase::GetAffordableAbilities(FGameplayTagContainer TagContainer,
-	TArray<UXGameplayAbility*>& MatchingAbilities) const
+void AXCharacterBase::GetAffordableAbilities(TArray<UXGameplayAbility*>& MatchingAbilities) const
+{
+	if (AbilitySystemComponent)
+	{
+		AbilitySystemComponent->GetAffordableAbilities(MatchingAbilities);
+		
+	}
+}
+
+void AXCharacterBase::GetAffordableAbilitiesByTag(FGameplayTagContainer TagContainer,
+                                                  TArray<UXGameplayAbility*>& MatchingAbilities) const
 {
 	if (AbilitySystemComponent)
 	{

@@ -5,6 +5,18 @@
 
 #include "Abilities/XAbilitySystemComponent.h"
 
+void UXAbilitySystemComponent::GetAffordableAbilities(TArray<UXGameplayAbility*>& MatchingAbilities)
+{
+	for (const FGameplayAbilitySpec& Spec: ActivatableAbilities.Items)
+	{
+		UGameplayAbility* Ability = Spec.Ability;
+		if (Ability->CheckCost(Spec.Handle, AbilityActorInfo.Get()))
+		{
+			MatchingAbilities.Add(Cast<UXGameplayAbility>(Ability));
+		}
+	}
+}
+
 void UXAbilitySystemComponent::GetAffordableAbilitiesByTag(const FGameplayTagContainer TagContainer, TArray<UXGameplayAbility*>& MatchingAbilities)
 {
 	TArray<FGameplayAbilitySpec*> FoundSpecs;
@@ -41,7 +53,6 @@ TSubclassOf<UXGameplayAbility> UXAbilitySystemComponent::GetNextAbilityByClass(T
 				const UXGameplayAbility* NewCDO = NewClass.GetDefaultObject();
 				if (IsValid(NewCDO))
 				{
-					GEngine->AddOnScreenDebugMessage(0, 5.f, FColor::Yellow, FString::Printf(TEXT("%s"), *NewCDO->Next->GetName()));
 					return NewCDO->Next;
 				}
 				else
