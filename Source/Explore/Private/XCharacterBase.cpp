@@ -69,6 +69,18 @@ UXAbilitySystemComponent* AXCharacterBase::GetAbilitySystemComponent() const
  	return AbilitySystemComponent;
 }
 
+void AXCharacterBase::GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const
+{
+	TArray<FGameplayAbilitySpec> ActivatableAbilities = AbilitySystemComponent->GetActivatableAbilities();
+	for(const FGameplayAbilitySpec Ability: ActivatableAbilities)
+	{
+		for(FGameplayTag Tag: Ability.Ability->AbilityTags)
+		{
+			TagContainer.AddTag(Tag);
+		}
+	}
+}
+
 void AXCharacterBase::GetAffordableAbilities(TArray<UXGameplayAbility*>& MatchingAbilities) const
 {
 	if (AbilitySystemComponent)

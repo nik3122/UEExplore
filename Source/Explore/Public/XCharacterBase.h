@@ -9,13 +9,12 @@
 #include "GameFramework/Character.h"
 #include "Abilities/XAbilitySystemComponent.h"
 #include "Abilities/XGameplayAbility.h"
-#include "CombatSystem/XCombo.h"
 
 #include "XCharacterBase.generated.h"
 
 
 UCLASS()
-class EXPLORE_API AXCharacterBase : public ACharacter, public IAbilitySystemInterface
+class EXPLORE_API AXCharacterBase : public ACharacter, public IAbilitySystemInterface, public IGameplayTagAssetInterface
 {
 	GENERATED_BODY()
 
@@ -46,9 +45,6 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UXAttributeSet* AttributeSet;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Abilities)
-	TArray<TSubclassOf<UXCombo>> Combos;
-
 	/** Abilities to grant to this character on creation. These will be activated by tag or event and are not bound to specific inputs */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Abilities)
 	TArray<TSubclassOf<UXGameplayAbility>> StartingGameplayAbilities;
@@ -59,6 +55,10 @@ protected:
 	// Implement IAbilitySystemInterface
 	virtual class UXAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
+	// Implement IGameplayTagAssetInterface
+	UFUNCTION(BlueprintCallable)
+	virtual void GetOwnedGameplayTags (FGameplayTagContainer & TagContainer) const override;
+
 	/** Get abilities that this character can afford to activate */
 	UFUNCTION(BlueprintCallable)
 	void GetAffordableAbilities(TArray<UXGameplayAbility*>& MatchingAbilities) const;
@@ -67,8 +67,7 @@ protected:
 	UFUNCTION(BlueprintCallable)
 	void GetAffordableAbilitiesByTag(FGameplayTagContainer TagContainer, TArray<UXGameplayAbility*>& MatchingAbilities) const;
 
-	/* Exposes method to get the class of the ability linked to the one give, if exists. */
-
+	/* Expose method to get the class of the ability linked to the one given, if exists. */
 	UFUNCTION(BlueprintCallable)
 	TSubclassOf<UXGameplayAbility> GetNextAbilityByClass(const TSubclassOf<UXGameplayAbility> AbilityClass) const;
 };

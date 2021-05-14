@@ -25,6 +25,10 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void LoadNextAbility();
 
+	/** Expose AbilityTags to Blueprint */
+	UFUNCTION(BlueprintCallable)
+	FGameplayTagContainer GetAbilityTags() const;
+
 private:
 	UPROPERTY()
 	UXGameplayAbility* _Next;

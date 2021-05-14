@@ -14,6 +14,10 @@ void UXGameplayAbility::LoadNextAbility()
 	if (IsValid(Next))
 	{
 		_Next = Next.GetDefaultObject();
-		UE_LOG(LogTemp, Warning, TEXT("Now Loaded %s"), *_Next->GetName());
 	}
+}
+
+FGameplayTagContainer UXGameplayAbility::GetAbilityTags() const
+{
+	return AbilityTags;
 }
