@@ -21,3 +21,15 @@ FGameplayTagContainer UXGameplayAbility::GetAbilityTags() const
 {
 	return AbilityTags;
 }
+
+FGameplayTag UXGameplayAbility::GetRangeTags() const
+{
+	for(FGameplayTag Tag: AbilityTags)
+	{
+		if(Tag.MatchesTag(FGameplayTag::RequestGameplayTag(FName("Ability.Range"))))
+		{
+			return Tag;		
+		}
+	}
+	return FGameplayTag::EmptyTag;
+}

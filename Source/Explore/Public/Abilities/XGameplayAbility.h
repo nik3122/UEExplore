@@ -29,6 +29,10 @@ public:
 	UFUNCTION(BlueprintCallable)
 	FGameplayTagContainer GetAbilityTags() const;
 
+	/* Get tag that describes what type of range this Ability is ideally executed from */
+	UFUNCTION(BlueprintCallable)
+	FGameplayTag GetRangeTags() const;
+
 private:
 	UPROPERTY()
 	UXGameplayAbility* _Next;

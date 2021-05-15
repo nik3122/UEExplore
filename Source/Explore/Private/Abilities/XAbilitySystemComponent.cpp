@@ -28,12 +28,11 @@ void UXAbilitySystemComponent::GetAffordableAbilitiesByTag(const FGameplayTagCon
 			UGameplayAbility * Ability = FoundSpec->Ability;
 			if (Ability->CheckCost(FoundSpec->Handle, AbilityActorInfo.Get()))
 			{
-				UE_LOG(LogTemp, Warning, TEXT("CAN AFFORD!! ADDING TO RETURNED ARRAY %s"), *Ability->GetName());
 				MatchingAbilities.Add(Cast<UXGameplayAbility>(Ability));
 			}
 			else
 			{
-				UE_LOG(LogTemp, Warning, TEXT("Can't afford!"));
+				UE_LOG(LogTemp, Log, TEXT("Can't afford Ability: %s"), *Ability->GetName());
 			}
 		}
 	}
@@ -62,8 +61,6 @@ TSubclassOf<UXGameplayAbility> UXAbilitySystemComponent::GetNextAbilityByClass(T
 			}
 		}
 	}
-	GEngine->AddOnScreenDebugMessage(0, 5.f, FColor::Red, FString::Printf(TEXT("Not found")));
-
-
+	GEngine->AddOnScreenDebugMessage(0, 5.f, FColor::Red, FString::Printf(TEXT("Ability not found")));
 	return nullptr;
 }
