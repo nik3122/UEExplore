@@ -28,6 +28,11 @@ float AXCharacterBase::GetStamina()
 void AXCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
+	if(!AttributeSet)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("AttributeSet not found at BeginPlay"))
+		return;
+	}
 	AttributeSet->InitHealth(100.0f);
 	AttributeSet->InitStamina(50.0f);
 }
