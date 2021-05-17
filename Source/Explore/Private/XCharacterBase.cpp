@@ -19,8 +19,6 @@ void AXCharacterBase::BeginPlay()
 void AXCharacterBase::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);
-	UE_LOG(LogTemp, Warning, TEXT("kefhrk"));
-
 	if (AbilitySystemComponent)
 	{
 		AbilitySystemComponent->InitAbilityActorInfo(this, this);
@@ -28,7 +26,7 @@ void AXCharacterBase::PossessedBy(AController* NewController)
 		InitializeAttributes();
 	} else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("No ability system"));
+		UE_LOG(LogTemp, Warning, TEXT("No ASC at PossessedBy() time"));
 	}
 }
 
@@ -112,7 +110,7 @@ void AXCharacterBase::GetAffordableAbilitiesByTag(FGameplayTagContainer TagConta
 	}
 	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Could not find ASC in GetAffordableAbilitiesByTag"));
+		UE_LOG(LogTemp, Warning, TEXT("No ASC at GetAffordableAbilitiesByTag() time"));
 	}
 }
 
