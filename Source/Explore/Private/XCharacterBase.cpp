@@ -11,69 +11,33 @@ AXCharacterBase::AXCharacterBase()
 	AbilitySystemComponent = CreateDefaultSubobject<UXAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
 }
 
-float AXCharacterBase::GetHealth()
-{
-	if (!AttributeSet)
-		return 1.f;
-	return AttributeSet->GetHealth();
-}
-
-float AXCharacterBase::GetStamina()
-{
-	if (!AttributeSet)
-		return 1.f;
-	return AttributeSet->GetStamina();
-}
-
 void AXCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
-	if(!AttributeSet)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("AttributeSet not found at BeginPlay"))
-		return;
-	}
-	AttributeSet->InitHealth(100.0f);
-	AttributeSet->InitStamina(50.0f);
 }
 
 void AXCharacterBase::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);
+	UE_LOG(LogTemp, Warning, TEXT("kefhrk"));
 
 	if (AbilitySystemComponent)
 	{
 		AbilitySystemComponent->InitAbilityActorInfo(this, this);
 		AddStartupGameplayAbilities();
+		InitializeAttributes();
 	} else
 	{
 		UE_LOG(LogTemp, Warning, TEXT("No ability system"));
 	}
 }
 
-
-void AXCharacterBase::AddStartupGameplayAbilities()
-{
-	for(TSubclassOf<UXGameplayAbility>& GameplayAbility: StartingGameplayAbilities)
-	{
-		AbilitySystemComponent->GiveAbility(FGameplayAbilitySpec(GameplayAbility));
-	}
-	// TArray<FGameplayAbilitySpec>& MyAbilities = AbilitySystemComponent->GetActivatableAbilities();
-	//
-	// for(int32 Index = 0; Index != MyAbilities.Num(); ++Index)
-	// {
-	// 	
-	// 	FGameplayAbilitySpec& strt = MyAbilities[Index];
-	// 	
-	// 	UE_LOG(LogTemp, Warning,TEXT("%s"), *strt.GetDebugString());
-	// }
-}
-
 UXAbilitySystemComponent* AXCharacterBase::GetAbilitySystemComponent() const
 {
- 	return AbilitySystemComponent;
+	return AbilitySystemComponent;
 }
 
+/** Currently returning only GAS Tags. This is not technically correct. Should be refactored. */
 void AXCharacterBase::GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const
 {
 	TArray<FGameplayAbilitySpec> ActivatableAbilities = AbilitySystemComponent->GetActivatableAbilities();
@@ -82,6 +46,50 @@ void AXCharacterBase::GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) 
 		for(FGameplayTag Tag: Ability.Ability->AbilityTags)
 		{
 			TagContainer.AddTag(Tag);
+		}
+	}
+}
+
+int32 AXCharacterBase::GetCurrentLevel()
+{
+	return 1;
+}
+
+float AXCharacterBase::GetHealth() const
+{
+	if (!AttributeSet)
+		return 1.f;
+	return AttributeSet->GetHealth();
+}
+
+float AXCharacterBase::GetStamina() const
+{
+	if (!AttributeSet)
+		return 1.f;
+	return AttributeSet->GetStamina();
+}
+
+void AXCharacterBase::AddStartupGameplayAbilities()
+{
+	for(TSubclassOf<UXGameplayAbility>& GameplayAbility: StartingAbilities)
+	{
+		AbilitySystemComponent->GiveAbility(FGameplayAbilitySpec(GameplayAbility));
+	}
+}
+
+void AXCharacterBase::InitializeAttributes()
+{
+	if(DefaultAttributesEffect && AbilitySystemComponent)
+	{
+		FGameplayEffectContextHandle EffectContextHandle = AbilitySystemComponent->MakeEffectContext();
+		EffectContextHandle.AddSourceObject(this);
+
+		const FGameplayEffectSpecHandle EffectSpecHandle = AbilitySystemComponent->MakeOutgoingSpec(
+			DefaultAttributesEffect, GetCurrentLevel(), EffectContextHandle);
+
+		if (EffectSpecHandle.IsValid())
+		{
+			AbilitySystemComponent->ApplyGameplayEffectSpecToSelf(*EffectSpecHandle.Data.Get());
 		}
 	}
 }
@@ -104,7 +112,7 @@ void AXCharacterBase::GetAffordableAbilitiesByTag(FGameplayTagContainer TagConta
 	}
 	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("I do not have an ASC"));
+		UE_LOG(LogTemp, Warning, TEXT("Could not find ASC in GetAffordableAbilitiesByTag"));
 	}
 }
 
@@ -112,7 +120,6 @@ TSubclassOf <UXGameplayAbility> AXCharacterBase::GetNextAbilityByClass(const TSu
 {
 	if (AbilitySystemComponent)
 	{
-		UE_LOG(LogTemp, Log, TEXT("Found"));
 		return AbilitySystemComponent->GetNextAbilityByClass(AbilityClass);
 	}
 
