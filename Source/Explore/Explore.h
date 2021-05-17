@@ -4,3 +4,12 @@
 
 #include "CoreMinimal.h"
 
+UENUM(BlueprintType)
+enum class EGdAbilityInputID : uint8
+{
+	None			UMETA(DisplayName="None"),
+	Confirm			UMETA(DisplayName="Confirm"),
+	Cancel			UMETA(DisplayName="Cancel"),
+	LightAttack		UMETA(DisplayName="LightAttack"),
+	StrongAttack	UMETA(DisplayName="StrongAttack")
+};

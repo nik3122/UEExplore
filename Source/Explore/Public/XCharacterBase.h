@@ -28,12 +28,14 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	float GetStamina() const;
-	
+
 protected:
 	virtual void BeginPlay() override;
 	
 	virtual void PossessedBy(AController* NewController) override;
 
+	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+	
 	// Implement IAbilitySystemInterface
 	virtual class UXAbilitySystemComponent* GetAbilitySystemComponent() const override;
 

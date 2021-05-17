@@ -3,6 +3,8 @@
 
 #include "XCharacterBase.h"
 
+#include "Explore/Explore.h"
+
 // Sets default values
 AXCharacterBase::AXCharacterBase()
 {
@@ -24,9 +26,25 @@ void AXCharacterBase::PossessedBy(AController* NewController)
 		AbilitySystemComponent->InitAbilityActorInfo(this, this);
 		AddStartupGameplayAbilities();
 		InitializeAttributes();
+
+		if (InputComponent)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("We have an InputCompnent: %"), *InputComponent->GetName());
+		}
 	} else
 	{
 		UE_LOG(LogTemp, Warning, TEXT("No ASC at PossessedBy() time"));
+	}
+}
+
+void AXCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	if (AbilitySystemComponent)
+	{
+		const FGameplayAbilityInputBinds AbilityBinds("Confirm", "Cancel", "EGdAbilityInputID", static_cast<int32>(EGdAbilityInputID::Confirm), static_cast<int32>(EGdAbilityInputID::Cancel));
+		AbilitySystemComponent->BindAbilityActivationToInputComponent(InputComponent, AbilityBinds);
 	}
 }
 
@@ -71,7 +89,8 @@ void AXCharacterBase::AddStartupGameplayAbilities()
 {
 	for(TSubclassOf<UXGameplayAbility>& GameplayAbility: StartingAbilities)
 	{
-		AbilitySystemComponent->GiveAbility(FGameplayAbilitySpec(GameplayAbility));
+		AbilitySystemComponent->GiveAbility(
+			FGameplayAbilitySpec(GameplayAbility, GetCurrentLevel(), static_cast<int32>(GameplayAbility.GetDefaultObject()->AbilityInputID), this));
 	}
 }
 

@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Abilities/GameplayAbility.h"
+#include "Explore/Explore.h"
+
 #include "XGameplayAbility.generated.h"
 
 /**
@@ -16,8 +18,11 @@ class EXPLORE_API UXGameplayAbility : public UGameplayAbility
 
 
 public:
-	UPROPERTY(BlueprintReadonly, EditAnywhere)
+	UPROPERTY(BlueprintReadonly, EditAnywhere, Category = "Combo")
 	TSubclassOf<UXGameplayAbility> Next;
+	
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Input")
+	EGdAbilityInputID AbilityInputID = EGdAbilityInputID::None;
 
 	UFUNCTION(BlueprintCallable)
 	UXGameplayAbility* GetNextAbility();
@@ -32,6 +37,7 @@ public:
 	/* Get tag that describes what type of range this Ability is ideally executed from */
 	UFUNCTION(BlueprintCallable)
 	FGameplayTag GetRangeTags() const;
+
 
 private:
 	UPROPERTY()
