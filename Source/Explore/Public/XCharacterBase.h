@@ -42,14 +42,14 @@ protected:
 	virtual void GetOwnedGameplayTags (FGameplayTagContainer & TagContainer) const override;
 	
 	/** The component used to handle ability system interactions */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Abilities)
+	UPROPERTY()
 	UXAbilitySystemComponent* AbilitySystemComponent;
 	
 	/** List of attributes modified by the ability system 
 	* WARNING: should not be UPROPERTY but without the engine crashes when initializing attributes.
 	* Probably because the Enemy BP has some old cached data. Will have to fix it at some point.
 	*/
-	UPROPERTY(BlueprintReadOnly, Category = Abilities)
+	UPROPERTY()
 	UXAttributeSet* AttributeSet;
     
     UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = Abilities)
