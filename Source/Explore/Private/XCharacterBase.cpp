@@ -37,6 +37,7 @@ void AXCharacterBase::PossessedBy(AController* NewController)
 	}
 }
 
+/*
 void AXCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
@@ -47,6 +48,7 @@ void AXCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 		AbilitySystemComponent->BindAbilityActivationToInputComponent(InputComponent, AbilityBinds);
 	}
 }
+*/
 
 UXAbilitySystemComponent* AXCharacterBase::GetAbilitySystemComponent() const
 {
@@ -90,7 +92,7 @@ void AXCharacterBase::AddStartupGameplayAbilities()
 	for(TSubclassOf<UXGameplayAbility>& GameplayAbility: StartingAbilities)
 	{
 		AbilitySystemComponent->GiveAbility(
-			FGameplayAbilitySpec(GameplayAbility, GetCurrentLevel(), static_cast<int32>(GameplayAbility.GetDefaultObject()->AbilityInputID), this));
+			FGameplayAbilitySpec(GameplayAbility, GetCurrentLevel(), INDEX_NONE, this));
 	}
 }
 

@@ -9,14 +9,6 @@ UXGameplayAbility* UXGameplayAbility::GetNextAbility()
 	return _Next;
 }
 
-void UXGameplayAbility::LoadNextAbility()
-{
-	if (IsValid(Next))
-	{
-		_Next = Next.GetDefaultObject();
-	}
-}
-
 FGameplayTagContainer UXGameplayAbility::GetAbilityTags() const
 {
 	return AbilityTags;
