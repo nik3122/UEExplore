@@ -3,8 +3,6 @@
 
 #include "XCharacterBase.h"
 
-#include "Explore/Explore.h"
-
 // Sets default values
 AXCharacterBase::AXCharacterBase()
 {
@@ -36,19 +34,6 @@ void AXCharacterBase::PossessedBy(AController* NewController)
 		UE_LOG(LogTemp, Warning, TEXT("No ASC at PossessedBy() time"));
 	}
 }
-
-/*
-void AXCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-	if (AbilitySystemComponent)
-	{
-		const FGameplayAbilityInputBinds AbilityBinds("Confirm", "Cancel", "EGdAbilityInputID", static_cast<int32>(EGdAbilityInputID::Confirm), static_cast<int32>(EGdAbilityInputID::Cancel));
-		AbilitySystemComponent->BindAbilityActivationToInputComponent(InputComponent, AbilityBinds);
-	}
-}
-*/
 
 UXAbilitySystemComponent* AXCharacterBase::GetAbilitySystemComponent() const
 {
@@ -145,3 +130,78 @@ TSubclassOf <UXGameplayAbility> AXCharacterBase::GetNextAbilityByClass(const TSu
 	return nullptr;
 }
 
+UXAbilityFlow* AXCharacterBase::
+CreateAbilityFlowInstance(FName Name)
+{
+	UE_LOG(LogTemp, Warning, TEXT("CREATING FLOW"));
+	TSubclassOf<UXAbilityFlow>* FlowClass = AbilityFlowMap.Find(Name);
+	if(!FlowClass)
+	{
+		return nullptr;	
+	}
+	UXAbilityFlow* NewFlow = NewObject<UXAbilityFlow>(this, FlowClass->GetDefaultObject()->GetClass());
+	ActiveAbilityFlows.Emplace(Name, FAbilityFlowHandle(1, NewFlow));
+	return NewFlow;
+}
+
+UXAbilityFlow* AXCharacterBase::GetAbilityFlowInstance(const FName Name)
+{
+	FAbilityFlowHandle* Handle = ActiveAbilityFlows.Find(Name);
+	if (Handle)
+	{
+		return Handle->AbilityFlow;
+	}
+	return nullptr;
+}
+
+bool AXCharacterBase::TickExecuteAbilityFlow(const FName Name)
+{
+	UXAbilityFlow* AbilityFlow = GetAbilityFlowInstance(Name);
+
+	if (!AbilityFlow)
+	{
+		AbilityFlow = CreateAbilityFlowInstance(Name);
+		if(!AbilityFlow)
+		{
+			UE_LOG(
+				LogTemp,
+				Warning,
+				TEXT("[AXCharacterBase::TickExecuteAbilityFlow] Attempted to Execute a non existing AbilityFlow.")
+			);
+			return false;
+		}
+	}
+	const TSubclassOf<UXGameplayAbility> Ability = AbilityFlow->GetAbilityAtCurrentIndex();
+
+	if(!Ability)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("aBILITY IS invalid! WHYYYY"));
+
+		return false;
+	}
+	
+	const bool AbilityActivated = AbilitySystemComponent->TryActivateAbilityByClass(Ability);
+	if(AbilityActivated)
+	{
+		// We tick the execution flow only if the ability was executed.
+		// The flow is considered interrupted otherwise and must reset to 0.
+		AbilityFlow->TickExecutionIndex();
+
+	} else
+	{
+		AbilityFlow->ResetExecutionIndex();
+	}
+	return AbilityActivated;
+}
+
+void AXCharacterBase::ResetAllExecutionIndices()
+{
+	for (TPair<FName, FAbilityFlowHandle>& Kvp : ActiveAbilityFlows)
+	{
+		const int32 ExecutionIndex = Kvp.Value.AbilityFlow->GetCurrentExecutionIndex();
+		if (ExecutionIndex != 0)
+		{
+			Kvp.Value.AbilityFlow->ResetExecutionIndex();
+		}
+	}
+}

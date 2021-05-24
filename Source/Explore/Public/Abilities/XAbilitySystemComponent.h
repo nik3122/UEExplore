@@ -5,6 +5,7 @@
 
 #include "CoreMinimal.h"
 #include "AbilitySystemComponent.h"
+#include "XAbilityFlow.h"
 #include "XGameplayAbility.h"
 
 #include "XAbilitySystemComponent.generated.h"

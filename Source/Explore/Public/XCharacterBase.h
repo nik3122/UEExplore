@@ -13,6 +13,26 @@
 
 #include "XCharacterBase.generated.h"
 
+USTRUCT()
+struct FAbilityFlowHandle
+{
+	GENERATED_BODY()
+
+	FAbilityFlowHandle(): Handle(INDEX_NONE), AbilityFlow(nullptr)
+	{
+	};
+	FAbilityFlowHandle(int32 InHandle, UXAbilityFlow* InFlow)
+		: Handle(InHandle), AbilityFlow(InFlow)
+	{
+
+	}
+	UPROPERTY()
+	int32 Handle;
+
+	UPROPERTY()
+	UXAbilityFlow * AbilityFlow;
+};
+
 
 UCLASS()
 class EXPLORE_API AXCharacterBase : public ACharacter, public IAbilitySystemInterface, public IGameplayTagAssetInterface
@@ -35,7 +55,7 @@ protected:
 	virtual void PossessedBy(AController* NewController) override;
 
 	// Implement IAbilitySystemInterface
-	virtual class UXAbilitySystemComponent* GetAbilitySystemComponent() const override;
+	virtual UXAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
 	// Implement IGameplayTagAssetInterface
 	UFUNCTION(BlueprintCallable)
@@ -58,7 +78,7 @@ protected:
 	/** Abilities to grant to this character on creation. These will be activated by tag or event and are not bound to specific inputs */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Abilities)
 	TArray<TSubclassOf<UXGameplayAbility>> StartingAbilities;
-
+	
 	/** Apply the startup gameplay abilities and effects */
 	void AddStartupGameplayAbilities();
 
@@ -79,4 +99,37 @@ protected:
 	/* Expose method to get the class of the ability linked to the one given, if exists. */
 	UFUNCTION(BlueprintCallable)
 	TSubclassOf<UXGameplayAbility> GetNextAbilityByClass(const TSubclassOf<UXGameplayAbility> AbilityClass) const;
+
+	// --------------------------------------
+	//	ABILITY FLOW SYSTEM
+	//
+	//	This should probably be moved into the AbilitySystemComponent
+	// --------------------------------------
+
+	/** Map of available flows */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = Abilities)
+	TMap<FName, TSubclassOf<UXAbilityFlow>> AbilityFlowMap;
+
+	UPROPERTY()
+	/** A map of handles to the currently instantiated flows */
+	TMap<FName, FAbilityFlowHandle> ActiveAbilityFlows;
+	
+	/* Create and return a new AbilityFlow**/
+	UFUNCTION(BlueprintCallable)
+	UXAbilityFlow* CreateAbilityFlowInstance(FName Name);
+
+	/**
+	* Main function of the flow system. Checks if a flow exists in Character's flow map. If not,
+	* instantiates one and proceeds to activate the ability at the current ExecutionIndex, ticking
+	* it or resetting it according to the success or not of the ability activation.
+	*/
+	UFUNCTION(BlueprintCallable)
+	UXAbilityFlow* GetAbilityFlowInstance(FName Name);
+	
+	UFUNCTION(BlueprintCallable)
+	bool TickExecuteAbilityFlow(FName Name);
+
+	/** Reset ExecutionIndex on all active Flows*/
+	UFUNCTION(BlueprintCallable)
+	void ResetAllExecutionIndices();
 };
