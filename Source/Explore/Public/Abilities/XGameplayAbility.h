@@ -20,6 +20,9 @@ class EXPLORE_API UXGameplayAbility : public UGameplayAbility
 public:
 	UPROPERTY(BlueprintReadonly, EditAnywhere, Category = "Combo")
 	TSubclassOf<UXGameplayAbility> Next;
+	
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Input")
+	EAbilityInput InputID;
 
 	UFUNCTION(BlueprintCallable)
 	UXGameplayAbility* GetNextAbility();

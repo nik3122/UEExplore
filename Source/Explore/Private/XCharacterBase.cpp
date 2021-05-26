@@ -9,6 +9,7 @@ AXCharacterBase::AXCharacterBase()
 	// Create the attribute set, this replicates by default
 	AttributeSet = CreateDefaultSubobject<UXAttributeSet>(TEXT("AttributeSet"));
 	AbilitySystemComponent = CreateDefaultSubobject<UXAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
+	AbilitySystemComponent->SetIsReplicated(true);
 }
 
 void AXCharacterBase::BeginPlay()
@@ -22,6 +23,7 @@ void AXCharacterBase::PossessedBy(AController* NewController)
 	if (AbilitySystemComponent)
 	{
 		AbilitySystemComponent->InitAbilityActorInfo(this, this);
+
 		AddStartupGameplayAbilities();
 		InitializeAttributes();
 
@@ -72,12 +74,40 @@ float AXCharacterBase::GetStamina() const
 	return AttributeSet->GetStamina();
 }
 
+void AXCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	if (AbilitySystemComponent)
+	{
+		AbilitySystemComponent->BindAbilityActivationToInputComponent(PlayerInputComponent,
+			FGameplayAbilityInputBinds(
+FString("Confirm"),
+FString("Cancel"),
+		FString("EAbilityInput"),
+static_cast<int32>(EAbilityInput::Confirm),
+static_cast<int32>(EAbilityInput::Cancel)
+		));
+	}
+
+}
+
 void AXCharacterBase::AddStartupGameplayAbilities()
 {
 	for(TSubclassOf<UXGameplayAbility>& GameplayAbility: StartingAbilities)
 	{
-		AbilitySystemComponent->GiveAbility(
-			FGameplayAbilitySpec(GameplayAbility, GetCurrentLevel(), INDEX_NONE, this));
+		if (GameplayAbility)
+			AbilitySystemComponent->GiveAbility(
+				FGameplayAbilitySpec(
+					GameplayAbility,
+					GetCurrentLevel(),
+					static_cast<int32>(GameplayAbility.GetDefaultObject()->InputID),
+					this));
+	}
+	for (TPair<FName, TSubclassOf<UXAbilityFlow>>& Kvp : DefaultFlows)
+	{
+		if (Kvp.Value)
+			AbilitySystemComponent->GiveAbilityFlow(FAbilityFlowSpec(Kvp.Value, Kvp.Key));
 	}
 }
 
@@ -130,78 +160,29 @@ TSubclassOf <UXGameplayAbility> AXCharacterBase::GetNextAbilityByClass(const TSu
 	return nullptr;
 }
 
-UXAbilityFlow* AXCharacterBase::
-CreateAbilityFlowInstance(FName Name)
+void AXCharacterBase::ResetAllExecutionIndices() const
 {
-	UE_LOG(LogTemp, Warning, TEXT("CREATING FLOW"));
-	TSubclassOf<UXAbilityFlow>* FlowClass = AbilityFlowMap.Find(Name);
-	if(!FlowClass)
+	if(AbilitySystemComponent)
 	{
-		return nullptr;	
+		AbilitySystemComponent->ResetAllExecutionIndices();
 	}
-	UXAbilityFlow* NewFlow = NewObject<UXAbilityFlow>(this, FlowClass->GetDefaultObject()->GetClass());
-	ActiveAbilityFlows.Emplace(Name, FAbilityFlowHandle(1, NewFlow));
-	return NewFlow;
 }
 
-UXAbilityFlow* AXCharacterBase::GetAbilityFlowInstance(const FName Name)
+void AXCharacterBase::GrantAbilityFromItem(UXItem* Item)
 {
-	FAbilityFlowHandle* Handle = ActiveAbilityFlows.Find(Name);
-	if (Handle)
+	FName Slot = "RightHand";
+	if (AbilitySystemComponent)
 	{
-		return Handle->AbilityFlow;
-	}
-	return nullptr;
-}
-
-bool AXCharacterBase::TickExecuteAbilityFlow(const FName Name)
-{
-	UXAbilityFlow* AbilityFlow = GetAbilityFlowInstance(Name);
-
-	if (!AbilityFlow)
-	{
-		AbilityFlow = CreateAbilityFlowInstance(Name);
-		if(!AbilityFlow)
+		if (Item->GrantedAbility)
 		{
-			UE_LOG(
-				LogTemp,
-				Warning,
-				TEXT("[AXCharacterBase::TickExecuteAbilityFlow] Attempted to Execute a non existing AbilityFlow.")
-			);
-			return false;
+			AbilitySystemComponent->GiveAbility(FGameplayAbilitySpec(Item->GrantedAbility, GetCurrentLevel()));
+					// Temporarily slotting into constant slot
+			SlottedAbilities.Add(Slot);
 		}
-	}
-	const TSubclassOf<UXGameplayAbility> Ability = AbilityFlow->GetAbilityAtCurrentIndex();
-
-	if(!Ability)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("aBILITY IS invalid! WHYYYY"));
-
-		return false;
-	}
-	
-	const bool AbilityActivated = AbilitySystemComponent->TryActivateAbilityByClass(Ability);
-	if(AbilityActivated)
-	{
-		// We tick the execution flow only if the ability was executed.
-		// The flow is considered interrupted otherwise and must reset to 0.
-		AbilityFlow->TickExecutionIndex();
-
-	} else
-	{
-		AbilityFlow->ResetExecutionIndex();
-	}
-	return AbilityActivated;
-}
-
-void AXCharacterBase::ResetAllExecutionIndices()
-{
-	for (TPair<FName, FAbilityFlowHandle>& Kvp : ActiveAbilityFlows)
-	{
-		const int32 ExecutionIndex = Kvp.Value.AbilityFlow->GetCurrentExecutionIndex();
-		if (ExecutionIndex != 0)
+		else if (Item->GrantedAbilityFlow)
 		{
-			Kvp.Value.AbilityFlow->ResetExecutionIndex();
+			AbilitySystemComponent->GiveAbilityFlow(FAbilityFlowSpec(Item->GrantedAbilityFlow, Slot));
 		}
 	}
 }
+
