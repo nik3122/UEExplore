@@ -21,20 +21,17 @@ public:
 	UPROPERTY(BlueprintReadonly, EditAnywhere, Category = "Combo")
 	TSubclassOf<UXGameplayAbility> Next;
 	
-	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Input")
-	EGdAbilityInputID AbilityInputID = EGdAbilityInputID::None;
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Input")
+	EAbilityInput InputID;
 
 	UFUNCTION(BlueprintCallable)
 	UXGameplayAbility* GetNextAbility();
-
-	UFUNCTION(BlueprintCallable)
-	void LoadNextAbility();
 
 	/** Expose AbilityTags to Blueprint */
 	UFUNCTION(BlueprintCallable)
 	FGameplayTagContainer GetAbilityTags() const;
 
-	/* Get tag that describes what type of range this Ability is ideally executed from */
+	/** Get tag that describes the range type of this ability */
 	UFUNCTION(BlueprintCallable)
 	FGameplayTag GetRangeTags() const;
 

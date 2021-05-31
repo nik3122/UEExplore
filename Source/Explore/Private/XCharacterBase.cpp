@@ -3,14 +3,13 @@
 
 #include "XCharacterBase.h"
 
-#include "Explore/Explore.h"
-
 // Sets default values
 AXCharacterBase::AXCharacterBase()
 {
 	// Create the attribute set, this replicates by default
 	AttributeSet = CreateDefaultSubobject<UXAttributeSet>(TEXT("AttributeSet"));
 	AbilitySystemComponent = CreateDefaultSubobject<UXAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
+	AbilitySystemComponent->SetIsReplicated(true);
 }
 
 void AXCharacterBase::BeginPlay()
@@ -24,6 +23,7 @@ void AXCharacterBase::PossessedBy(AController* NewController)
 	if (AbilitySystemComponent)
 	{
 		AbilitySystemComponent->InitAbilityActorInfo(this, this);
+
 		AddStartupGameplayAbilities();
 		InitializeAttributes();
 
@@ -34,17 +34,6 @@ void AXCharacterBase::PossessedBy(AController* NewController)
 	} else
 	{
 		UE_LOG(LogTemp, Warning, TEXT("No ASC at PossessedBy() time"));
-	}
-}
-
-void AXCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-	if (AbilitySystemComponent)
-	{
-		const FGameplayAbilityInputBinds AbilityBinds("Confirm", "Cancel", "EGdAbilityInputID", static_cast<int32>(EGdAbilityInputID::Confirm), static_cast<int32>(EGdAbilityInputID::Cancel));
-		AbilitySystemComponent->BindAbilityActivationToInputComponent(InputComponent, AbilityBinds);
 	}
 }
 
@@ -85,12 +74,36 @@ float AXCharacterBase::GetStamina() const
 	return AttributeSet->GetStamina();
 }
 
+void AXCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	if (AbilitySystemComponent)
+	{
+		AbilitySystemComponent->BindAbilityActivationToInputComponent(
+		PlayerInputComponent,
+			FGameplayAbilityInputBinds(
+			FString("Confirm"),
+			FString("Cancel"),
+			FString("EAbilityInput"),
+			static_cast<int32>(EAbilityInput::Confirm),
+			static_cast<int32>(EAbilityInput::Cancel)
+		));
+	}
+
+}
+
 void AXCharacterBase::AddStartupGameplayAbilities()
 {
 	for(TSubclassOf<UXGameplayAbility>& GameplayAbility: StartingAbilities)
 	{
-		AbilitySystemComponent->GiveAbility(
-			FGameplayAbilitySpec(GameplayAbility, GetCurrentLevel(), static_cast<int32>(GameplayAbility.GetDefaultObject()->AbilityInputID), this));
+		if (GameplayAbility)
+			AbilitySystemComponent->GiveAbility(
+				FGameplayAbilitySpec(
+					GameplayAbility,
+					GetCurrentLevel(),
+					static_cast<int32>(GameplayAbility.GetDefaultObject()->InputID),
+					this));
 	}
 }
 
@@ -141,5 +154,19 @@ TSubclassOf <UXGameplayAbility> AXCharacterBase::GetNextAbilityByClass(const TSu
 	}
 
 	return nullptr;
+}
+
+void AXCharacterBase::GrantAbilityFromItem(UXItem* Item)
+{
+	FName Slot = "RightHand";
+	if (AbilitySystemComponent)
+	{
+		if (Item->GrantedAbility)
+		{
+			AbilitySystemComponent->GiveAbility(FGameplayAbilitySpec(Item->GrantedAbility, GetCurrentLevel()));
+					// Temporarily slotting into constant slot
+			SlottedAbilities.Add(Slot);
+		}
+	}
 }
 

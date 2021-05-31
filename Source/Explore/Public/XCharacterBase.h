@@ -10,9 +10,9 @@
 #include "Abilities/XAbilitySystemComponent.h"
 #include "Abilities/XGameplayAbility.h"
 #include "GameplayEffect.h"
+#include "Items/Xitem.h"
 
 #include "XCharacterBase.generated.h"
-
 
 UCLASS()
 class EXPLORE_API AXCharacterBase : public ACharacter, public IAbilitySystemInterface, public IGameplayTagAssetInterface
@@ -34,10 +34,9 @@ protected:
 	
 	virtual void PossessedBy(AController* NewController) override;
 
-	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
-	
 	// Implement IAbilitySystemInterface
-	virtual class UXAbilitySystemComponent* GetAbilitySystemComponent() const override;
+	UFUNCTION(BlueprintCallable)
+	virtual UXAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
 	// Implement IGameplayTagAssetInterface
 	UFUNCTION(BlueprintCallable)
@@ -61,6 +60,8 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Abilities)
 	TArray<TSubclassOf<UXGameplayAbility>> StartingAbilities;
 
+	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+	
 	/** Apply the startup gameplay abilities and effects */
 	void AddStartupGameplayAbilities();
 
@@ -81,4 +82,14 @@ protected:
 	/* Expose method to get the class of the ability linked to the one given, if exists. */
 	UFUNCTION(BlueprintCallable)
 	TSubclassOf<UXGameplayAbility> GetNextAbilityByClass(const TSubclassOf<UXGameplayAbility> AbilityClass) const;
+
+	// --------------------------------------
+	//	SLOTTING SYSTEM
+	// --------------------------------------
+
+	UFUNCTION(BlueprintCallable)
+	void GrantAbilityFromItem(UXItem* Item);
+
+	UPROPERTY(BlueprintReadOnly)
+	TMap<FName, FGameplayAbilitySpecHandle> SlottedAbilities;
 };

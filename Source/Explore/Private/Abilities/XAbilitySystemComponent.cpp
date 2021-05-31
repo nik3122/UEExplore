@@ -24,16 +24,10 @@ void UXAbilitySystemComponent::GetAffordableAbilitiesByTag(const FGameplayTagCon
 
 	for (FGameplayAbilitySpec* FoundSpec : FoundSpecs)
 	{
+		UGameplayAbility * Ability = FoundSpec->Ability;
+		if (Ability->CheckCost(FoundSpec->Handle, AbilityActorInfo.Get()))
 		{
-			UGameplayAbility * Ability = FoundSpec->Ability;
-			if (Ability->CheckCost(FoundSpec->Handle, AbilityActorInfo.Get()))
-			{
-				MatchingAbilities.Add(Cast<UXGameplayAbility>(Ability));
-			}
-			else
-			{
-				UE_LOG(LogTemp, Log, TEXT("Can't afford Ability: %s"), *Ability->GetName());
-			}
+			MatchingAbilities.Add(Cast<UXGameplayAbility>(Ability));
 		}
 	}
 }
@@ -53,10 +47,6 @@ TSubclassOf<UXGameplayAbility> UXAbilitySystemComponent::GetNextAbilityByClass(T
 				if (IsValid(NewCDO))
 				{
 					return NewCDO->Next;
-				}
-				else
-				{
-					UE_LOG(LogTemp, Warning, TEXT("Invalid CDO...??"));
 				}
 			}
 		}
