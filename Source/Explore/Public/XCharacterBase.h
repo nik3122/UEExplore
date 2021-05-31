@@ -84,17 +84,6 @@ protected:
 	TSubclassOf<UXGameplayAbility> GetNextAbilityByClass(const TSubclassOf<UXGameplayAbility> AbilityClass) const;
 
 	// --------------------------------------
-	//	ABILITY FLOW
-	// --------------------------------------
-
-	/** List of Flows available by default */
-	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = Abilities)
-	TMap<FName, TSubclassOf<UXAbilityFlow>> DefaultFlows;
-	
-	UFUNCTION(BlueprintCallable)
-	void ResetAllExecutionIndices() const;
-
-	// --------------------------------------
 	//	SLOTTING SYSTEM
 	// --------------------------------------
 

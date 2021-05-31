@@ -6,7 +6,6 @@
 
 #include "XAssetManager.h"
 #include "Abilities/XGameplayAbility.h"
-#include "Abilities/XAbilityFlow.h"
 #include "Engine/DataAsset.h"
 #include "XItem.generated.h"
 
@@ -35,9 +34,6 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Item")
 	TSubclassOf<UXGameplayAbility> GrantedAbility;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Item")
-	TSubclassOf<UXAbilityFlow> GrantedAbilityFlow;
 
 	virtual FPrimaryAssetId GetPrimaryAssetId() const override;
 };

@@ -80,13 +80,14 @@ void AXCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 
 	if (AbilitySystemComponent)
 	{
-		AbilitySystemComponent->BindAbilityActivationToInputComponent(PlayerInputComponent,
+		AbilitySystemComponent->BindAbilityActivationToInputComponent(
+		PlayerInputComponent,
 			FGameplayAbilityInputBinds(
-FString("Confirm"),
-FString("Cancel"),
-		FString("EAbilityInput"),
-static_cast<int32>(EAbilityInput::Confirm),
-static_cast<int32>(EAbilityInput::Cancel)
+			FString("Confirm"),
+			FString("Cancel"),
+			FString("EAbilityInput"),
+			static_cast<int32>(EAbilityInput::Confirm),
+			static_cast<int32>(EAbilityInput::Cancel)
 		));
 	}
 
@@ -103,11 +104,6 @@ void AXCharacterBase::AddStartupGameplayAbilities()
 					GetCurrentLevel(),
 					static_cast<int32>(GameplayAbility.GetDefaultObject()->InputID),
 					this));
-	}
-	for (TPair<FName, TSubclassOf<UXAbilityFlow>>& Kvp : DefaultFlows)
-	{
-		if (Kvp.Value)
-			AbilitySystemComponent->GiveAbilityFlow(FAbilityFlowSpec(Kvp.Value, Kvp.Key));
 	}
 }
 
@@ -160,14 +156,6 @@ TSubclassOf <UXGameplayAbility> AXCharacterBase::GetNextAbilityByClass(const TSu
 	return nullptr;
 }
 
-void AXCharacterBase::ResetAllExecutionIndices() const
-{
-	if(AbilitySystemComponent)
-	{
-		AbilitySystemComponent->ResetAllExecutionIndices();
-	}
-}
-
 void AXCharacterBase::GrantAbilityFromItem(UXItem* Item)
 {
 	FName Slot = "RightHand";
@@ -178,10 +166,6 @@ void AXCharacterBase::GrantAbilityFromItem(UXItem* Item)
 			AbilitySystemComponent->GiveAbility(FGameplayAbilitySpec(Item->GrantedAbility, GetCurrentLevel()));
 					// Temporarily slotting into constant slot
 			SlottedAbilities.Add(Slot);
-		}
-		else if (Item->GrantedAbilityFlow)
-		{
-			AbilitySystemComponent->GiveAbilityFlow(FAbilityFlowSpec(Item->GrantedAbilityFlow, Slot));
 		}
 	}
 }
