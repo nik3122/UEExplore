@@ -32,8 +32,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Item")
 	FName Description;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Item")
-	TSubclassOf<UXGameplayAbility> GrantedAbility;
-
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Abilities")
+	TArray<TSubclassOf<UXGameplayAbility>> GrantedAbilities;
+	
 	virtual FPrimaryAssetId GetPrimaryAssetId() const override;
 };

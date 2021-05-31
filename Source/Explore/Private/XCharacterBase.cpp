@@ -24,6 +24,8 @@ void AXCharacterBase::PossessedBy(AController* NewController)
 	{
 		AbilitySystemComponent->InitAbilityActorInfo(this, this);
 
+		// Adding abilities here somehow causes them to activate twice
+		// (which screws up combos). I'll figure out why, one day. Maybe.
 		AddStartupGameplayAbilities();
 		InitializeAttributes();
 
@@ -158,14 +160,20 @@ TSubclassOf <UXGameplayAbility> AXCharacterBase::GetNextAbilityByClass(const TSu
 
 void AXCharacterBase::GrantAbilityFromItem(UXItem* Item)
 {
-	FName Slot = "RightHand";
 	if (AbilitySystemComponent)
 	{
-		if (Item->GrantedAbility)
+		for (TSubclassOf<UXGameplayAbility>& Ability : Item->GrantedAbilities)
 		{
-			AbilitySystemComponent->GiveAbility(FGameplayAbilitySpec(Item->GrantedAbility, GetCurrentLevel()));
-					// Temporarily slotting into constant slot
-			SlottedAbilities.Add(Slot);
+			if (Ability)
+			{
+				AbilitySystemComponent->GiveAbility(
+				FGameplayAbilitySpec(
+					Ability,
+					GetCurrentLevel(),
+					static_cast<int32>(Ability.GetDefaultObject()->InputID),
+					this)
+				);
+			}
 		}
 	}
 }
