@@ -17,7 +17,7 @@ void UXAbilitySystemComponent::GetAffordableAbilities(TArray<UXGameplayAbility*>
 	}
 }
 
-void UXAbilitySystemComponent::GetAffordableAbilitiesByTag(const FGameplayTagContainer TagContainer, TArray<UXGameplayAbility*>& MatchingAbilities)
+void UXAbilitySystemComponent::GetAffordableAbilitiesByTag(const FGameplayTagContainer TagContainer, TArray<UXGameplayAbility*>& MatchingAbilities) const
 {
 	TArray<FGameplayAbilitySpec*> FoundSpecs;
 	GetActivatableGameplayAbilitySpecsByAllMatchingTags(TagContainer, FoundSpecs);
@@ -32,7 +32,7 @@ void UXAbilitySystemComponent::GetAffordableAbilitiesByTag(const FGameplayTagCon
 	}
 }
 
-TSubclassOf<UXGameplayAbility> UXAbilitySystemComponent::GetNextAbilityByClass(TSubclassOf<UXGameplayAbility> AbilityClass)
+TSubclassOf<UXGameplayAbility> UXAbilitySystemComponent::GetNextAbilityByClass(const TSubclassOf<UXGameplayAbility> AbilityClass)
 {
 	const UXGameplayAbility* const AbilityClassCDO = AbilityClass.GetDefaultObject();
 	
