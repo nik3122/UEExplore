@@ -9,20 +9,17 @@
 #include "Engine/DataAsset.h"
 #include "XItem.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class EXPLORE_API UXItem : public UPrimaryDataAsset
 {
 	GENERATED_BODY()
-
+	
+public:
 	UXItem()
 	{
 		ItemType = UXAssetManager::BaseItemType;
 	}
 
-public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Item")
 	FPrimaryAssetType ItemType;
 
