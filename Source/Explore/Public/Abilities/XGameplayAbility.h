@@ -9,23 +9,31 @@
 #include "XGameplayAbility.generated.h"
 
 /**
- * 
+ * Expand base GameplayAbility with utilities for input binding, applying
+ * GameplayEffects and querying Ability tags.
  */
 UCLASS()
 class EXPLORE_API UXGameplayAbility : public UGameplayAbility
 {
 	GENERATED_BODY()
 
-
 public:
+
+	/** DEPRECATED: used for old combo system and currently only used by AI. Will be removed. */
 	UPROPERTY(BlueprintReadonly, EditAnywhere, Category = "Combo")
 	TSubclassOf<UXGameplayAbility> Next;
-	
+
+	/** DEPRECATED: used for old combo system and currently only used by AI. Will be removed. */
+	UFUNCTION(BlueprintCallable)
+	UXGameplayAbility* GetNextAbility();
+
+	/** Bind Ability activation to this Input */
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Input")
 	EAbilityInput InputID;
 
-	UFUNCTION(BlueprintCallable)
-	UXGameplayAbility* GetNextAbility();
+	/** Gameplay Effects to apply for a given tag */
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Effects")
+	TMap<FGameplayTag, TSubclassOf<UGameplayEffect>> GameplayEffectMap;
 
 	/** Expose AbilityTags to Blueprint */
 	UFUNCTION(BlueprintCallable)
@@ -35,8 +43,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	FGameplayTag GetRangeTags() const;
 
-
 private:
+	/** DEPRECATED: used for old combo system and currently only used by AI. Will be removed. */
 	UPROPERTY()
 	UXGameplayAbility* _Next;
 };

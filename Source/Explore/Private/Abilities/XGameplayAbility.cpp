@@ -11,6 +11,7 @@ UXGameplayAbility* UXGameplayAbility::GetNextAbility()
 
 FGameplayTagContainer UXGameplayAbility::GetAbilityTags() const
 {
+	ApplyGameplayEffectToTarget()
 	return AbilityTags;
 }
 
