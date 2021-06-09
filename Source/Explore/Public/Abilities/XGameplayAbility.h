@@ -3,6 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+
+#include "XAbilityTypes.h"
 #include "Abilities/GameplayAbility.h"
 #include "Explore/Explore.h"
 
@@ -32,8 +34,11 @@ public:
 	EAbilityInput InputID;
 
 	/** Gameplay Effects to apply for a given tag */
-	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Effects")
-	TMap<FGameplayTag, TSubclassOf<UGameplayEffect>> GameplayEffectMap;
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Effects")
+	TMap<FGameplayTag, FXGameplayEffectContainer> EffectContainerMap;
+
+	UFUNCTION(BlueprintCallable, Category = "Effects")
+	virtual TArray<FActiveGameplayEffectHandle>  ApplyEffectContainer (FGameplayTag EffectContainerTag, const FGameplayEventData& EventData);
 
 	/** Expose AbilityTags to Blueprint */
 	UFUNCTION(BlueprintCallable)

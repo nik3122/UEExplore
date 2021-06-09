@@ -41,15 +41,16 @@ protected:
 	// Implement IGameplayTagAssetInterface
 	UFUNCTION(BlueprintCallable)
 	virtual void GetOwnedGameplayTags (FGameplayTagContainer & TagContainer) const override;
+
+	/** Allow custom Blueprint implementation of reaction to Poise break */ 
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnPoiseBreak();
 	
 	/** The component used to handle ability system interactions */
 	UPROPERTY()
 	UXAbilitySystemComponent* AbilitySystemComponent;
 	
-	/** List of attributes modified by the ability system 
-	* WARNING: should not be UPROPERTY but without the engine crashes when initializing attributes.
-	* Probably because the Enemy BP has some old cached data. Will have to fix it at some point.
-	*/
+	/** List of attributes modified by the ability system */
 	UPROPERTY()
 	UXAttributeSet* AttributeSet;
     
@@ -69,7 +70,7 @@ protected:
 	virtual void InitializeAttributes();
 
 	/** Get current Character level. Mainly used by GAS */
-	int32 GetCurrentLevel();
+	static int32 GetCurrentLevel();
 	
 	/** Get abilities that this character can afford to activate */
 	UFUNCTION(BlueprintCallable)
@@ -83,6 +84,18 @@ protected:
 	UFUNCTION(BlueprintCallable)
 	TSubclassOf<UXGameplayAbility> GetNextAbilityByClass(const TSubclassOf<UXGameplayAbility> AbilityClass) const;
 
+	/* -- ATTRIBUTE CHANGE CALLBACKS -- **/
+	
+	FDelegateHandle HealthChangedDelegateHandle;
+	FDelegateHandle StaminaChangedDelegateHandle;
+	FDelegateHandle PoiseChangedDelegateHandle;
+
+	virtual void HealthChanged(const FOnAttributeChangeData& Data);
+	virtual void StaminaChanged(const FOnAttributeChangeData& Data);
+	virtual void PoiseChanged(const FOnAttributeChangeData& Data);
+
+	/* -------------------------------  **/
+	
 	// --------------------------------------
 	//	SLOTTING SYSTEM
 	// --------------------------------------

@@ -22,12 +22,16 @@ class EXPLORE_API UXAttributeSet : public UAttributeSet
 	GENERATED_BODY()
 public:
 	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Health")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Attributes")
 	FGameplayAttributeData Health;
 	ATTRIBUTE_ACCESSORS(UXAttributeSet, Health);
 	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Health")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Attributes")
 	FGameplayAttributeData Stamina;
 	ATTRIBUTE_ACCESSORS(UXAttributeSet, Stamina);
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Attributes")
+	FGameplayAttributeData Poise;
+	ATTRIBUTE_ACCESSORS(UXAttributeSet, Poise);
 };
 
