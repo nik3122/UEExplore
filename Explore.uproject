@@ -24,10 +24,6 @@
 		{
 			"Name": "GameplayAbilities",
 			"Enabled": true
-		},
-		{
-			"Name": "RiderLink",
-			"Enabled": false
 		}
 	]
 }

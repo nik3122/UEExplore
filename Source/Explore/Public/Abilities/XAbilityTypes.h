@@ -20,7 +20,7 @@ public:
 
 	/** List of gameplay effects to apply to the targets */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "GameplayEffectContainer")
-		TArray<TSubclassOf<UGameplayEffect>> TargetGameplayEffectClasses;
+	TArray<TSubclassOf<UGameplayEffect>> TargetGameplayEffectClasses;
 };
 
 

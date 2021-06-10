@@ -3,6 +3,8 @@
 
 #include "Abilities/XGameplayAbility.h"
 
+#include "AbilitySystemComponent.h"
+
 
 UXGameplayAbility* UXGameplayAbility::GetNextAbility()
 {

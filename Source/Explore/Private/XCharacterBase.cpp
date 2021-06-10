@@ -14,6 +14,8 @@ void AXCharacterBase::BeginPlay()
 
 	if (AbilitySystemComponent)
 	{
+		AddStartupGameplayAbilities();
+		InitializeAttributes();
 		HealthChangedDelegateHandle = AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(AttributeSet->GetHealthAttribute()).AddUObject(this, &AXCharacterBase::HealthChanged);
 		StaminaChangedDelegateHandle = AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(AttributeSet->GetStaminaAttribute()).AddUObject(this, &AXCharacterBase::StaminaChanged);
 		PoiseChangedDelegateHandle = AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(AttributeSet->GetPoiseAttribute()).AddUObject(this, &AXCharacterBase::PoiseChanged);
@@ -29,8 +31,6 @@ void AXCharacterBase::PossessedBy(AController* NewController)
 
 		// Adding abilities here somehow causes them to activate twice
 		// (which screws up combos). I'll figure out why, one day. Maybe.
-		AddStartupGameplayAbilities();
-		InitializeAttributes();
 
 		if (InputComponent)
 		{
