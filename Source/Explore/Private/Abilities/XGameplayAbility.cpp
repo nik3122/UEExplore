@@ -3,10 +3,32 @@
 
 #include "Abilities/XGameplayAbility.h"
 
+#include "AbilitySystemComponent.h"
+
 
 UXGameplayAbility* UXGameplayAbility::GetNextAbility()
 {
 	return _Next;
+}
+
+TArray<FActiveGameplayEffectHandle> UXGameplayAbility::ApplyEffectContainer(FGameplayTag EffectContainerTag, const FGameplayEventData& EventData)
+{
+	FXGameplayEffectContainer* EffectContainer = EffectContainerMap.Find(EventData.EventTag);
+	TArray<FActiveGameplayEffectHandle> AllEffects;
+
+	if (EffectContainer)
+	{
+		if (EffectContainer->TargetGameplayEffectClasses.IsValidIndex(0))
+		{
+			for (TSubclassOf<UGameplayEffect>& EffectClass : EffectContainer->TargetGameplayEffectClasses)
+			{
+				const FGameplayEffectSpecHandle Handle = MakeOutgoingGameplayEffectSpec(EffectClass);
+				AllEffects.Append(K2_ApplyGameplayEffectSpecToTarget(Handle, EventData.TargetData));
+			}
+		}
+	}
+
+	return AllEffects;
 }
 
 FGameplayTagContainer UXGameplayAbility::GetAbilityTags() const

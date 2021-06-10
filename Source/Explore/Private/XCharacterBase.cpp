@@ -1,9 +1,5 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "XCharacterBase.h"
 
-// Sets default values
 AXCharacterBase::AXCharacterBase()
 {
 	// Create the attribute set, this replicates by default
@@ -15,6 +11,15 @@ AXCharacterBase::AXCharacterBase()
 void AXCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
+
+	if (AbilitySystemComponent)
+	{
+		AddStartupGameplayAbilities();
+		InitializeAttributes();
+		HealthChangedDelegateHandle = AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(AttributeSet->GetHealthAttribute()).AddUObject(this, &AXCharacterBase::HealthChanged);
+		StaminaChangedDelegateHandle = AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(AttributeSet->GetStaminaAttribute()).AddUObject(this, &AXCharacterBase::StaminaChanged);
+		PoiseChangedDelegateHandle = AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(AttributeSet->GetPoiseAttribute()).AddUObject(this, &AXCharacterBase::PoiseChanged);
+	}
 }
 
 void AXCharacterBase::PossessedBy(AController* NewController)
@@ -26,8 +31,6 @@ void AXCharacterBase::PossessedBy(AController* NewController)
 
 		// Adding abilities here somehow causes them to activate twice
 		// (which screws up combos). I'll figure out why, one day. Maybe.
-		AddStartupGameplayAbilities();
-		InitializeAttributes();
 
 		if (InputComponent)
 		{
@@ -57,7 +60,7 @@ void AXCharacterBase::GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) 
 	}
 }
 
-int32 AXCharacterBase::GetCurrentLevel()
+auto AXCharacterBase::GetCurrentLevel() -> int32
 {
 	return 1;
 }
@@ -156,6 +159,25 @@ TSubclassOf <UXGameplayAbility> AXCharacterBase::GetNextAbilityByClass(const TSu
 	}
 
 	return nullptr;
+}
+
+void AXCharacterBase::HealthChanged(const FOnAttributeChangeData& Data)
+{
+}
+
+void AXCharacterBase::StaminaChanged(const FOnAttributeChangeData& Data)
+{
+}
+
+void AXCharacterBase::PoiseChanged(const FOnAttributeChangeData& Data)
+{
+	const float Poise = Data.NewValue;
+
+	if (Poise <= 0.0f)
+	{
+		// Notify Blueprint so it can handle it however necessary
+		OnPoiseBreak();
+	}
 }
 
 void AXCharacterBase::GrantAbilityFromItem(UXItem* Item)

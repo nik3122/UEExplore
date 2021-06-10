@@ -6,9 +6,7 @@
 #include "Engine/AssetManager.h"
 #include "XAssetManager.generated.h"
 
-/**
- * 
- */
+
 UCLASS()
 class EXPLORE_API UXAssetManager : public UAssetManager
 {
@@ -16,6 +14,7 @@ class EXPLORE_API UXAssetManager : public UAssetManager
 
 public:
 	static const FPrimaryAssetType BaseItemType;
+	static const FPrimaryAssetType WeaponItemType;
 
 	static UXAssetManager& Get();
 };
