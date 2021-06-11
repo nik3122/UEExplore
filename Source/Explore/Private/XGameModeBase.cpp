@@ -1,5 +1,14 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "XGameModeBase.h"
 
+AXGameModeBase::AXGameModeBase()
+{
+}
+
+void AXGameModeBase::GameOver()
+{
+	if (bGameOver == false)
+	{
+		K2_OnGameOver();
+		bGameOver = true;
+	}
+}
