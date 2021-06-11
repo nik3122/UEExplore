@@ -29,6 +29,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	float GetStamina() const;
 
+	void HandleDamage(float const Damage);
+
 protected:
 	virtual void BeginPlay() override;
 	
@@ -42,9 +44,16 @@ protected:
 	UFUNCTION(BlueprintCallable)
 	virtual void GetOwnedGameplayTags (FGameplayTagContainer & TagContainer) const override;
 
-	/** Allow custom Blueprint implementation of reaction to Poise break */ 
+	/** === Blueprint events for relevant Attribute changes === */ 
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnPoiseBreak();
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnDamageTaken(float Damage);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnHealthChanged();
+	/** ======================================================== */
 	
 	/** The component used to handle ability system interactions */
 	UPROPERTY()
@@ -60,6 +69,9 @@ protected:
 	/** Abilities to grant to this character on creation. These will be activated by tag or event and are not bound to specific inputs */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Abilities)
 	TArray<TSubclassOf<UXGameplayAbility>> StartingAbilities;
+
+	UPROPERTY()
+	bool bAbilitiesInitialized;
 
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 	

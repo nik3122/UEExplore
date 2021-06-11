@@ -14,8 +14,8 @@ void AXCharacterBase::BeginPlay()
 
 	if (AbilitySystemComponent)
 	{
-		AddStartupGameplayAbilities();
 		InitializeAttributes();
+		AddStartupGameplayAbilities();
 		HealthChangedDelegateHandle = AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(AttributeSet->GetHealthAttribute()).AddUObject(this, &AXCharacterBase::HealthChanged);
 		StaminaChangedDelegateHandle = AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(AttributeSet->GetStaminaAttribute()).AddUObject(this, &AXCharacterBase::StaminaChanged);
 		PoiseChangedDelegateHandle = AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(AttributeSet->GetPoiseAttribute()).AddUObject(this, &AXCharacterBase::PoiseChanged);
@@ -100,15 +100,19 @@ void AXCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 
 void AXCharacterBase::AddStartupGameplayAbilities()
 {
-	for(TSubclassOf<UXGameplayAbility>& GameplayAbility: StartingAbilities)
+	if (!bAbilitiesInitialized)
 	{
-		if (GameplayAbility)
-			AbilitySystemComponent->GiveAbility(
-				FGameplayAbilitySpec(
-					GameplayAbility,
-					GetCurrentLevel(),
-					static_cast<int32>(GameplayAbility.GetDefaultObject()->InputID),
-					this));
+		for(TSubclassOf<UXGameplayAbility>& GameplayAbility: StartingAbilities)
+		{
+			if (GameplayAbility)
+				AbilitySystemComponent->GiveAbility(
+					FGameplayAbilitySpec(
+						GameplayAbility,
+						GetCurrentLevel(),
+						static_cast<int32>(GameplayAbility.GetDefaultObject()->InputID),
+						this));
+		}
+		bAbilitiesInitialized = true;
 	}
 }
 
@@ -163,6 +167,8 @@ TSubclassOf <UXGameplayAbility> AXCharacterBase::GetNextAbilityByClass(const TSu
 
 void AXCharacterBase::HealthChanged(const FOnAttributeChangeData& Data)
 {
+	if (bAbilitiesInitialized)
+		OnHealthChanged();
 }
 
 void AXCharacterBase::StaminaChanged(const FOnAttributeChangeData& Data)
@@ -178,6 +184,12 @@ void AXCharacterBase::PoiseChanged(const FOnAttributeChangeData& Data)
 		// Notify Blueprint so it can handle it however necessary
 		OnPoiseBreak();
 	}
+}
+
+void AXCharacterBase::HandleDamage(const float Damage)
+{
+	if(bAbilitiesInitialized)
+		OnDamageTaken(Damage);
 }
 
 void AXCharacterBase::GrantAbilityFromItem(UXItem* Item)

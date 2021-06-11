@@ -33,5 +33,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Attributes")
 	FGameplayAttributeData Poise;
 	ATTRIBUTE_ACCESSORS(UXAttributeSet, Poise);
+
+	virtual void PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data) override;
 };
 
