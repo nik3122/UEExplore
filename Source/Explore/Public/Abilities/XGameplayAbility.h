@@ -38,7 +38,7 @@ public:
 	TMap<FGameplayTag, FXGameplayEffectContainer> EffectContainerMap;
 
 	UFUNCTION(BlueprintCallable, Category = "Effects")
-	virtual TArray<FActiveGameplayEffectHandle>  ApplyEffectContainer (FGameplayTag EffectContainerTag, const FGameplayEventData& EventData);
+	virtual TArray<FActiveGameplayEffectHandle>  ApplyEffectContainer (const FGameplayEventData& EventData);
 
 	/** Expose AbilityTags to Blueprint */
 	UFUNCTION(BlueprintCallable)

@@ -11,7 +11,7 @@ UXGameplayAbility* UXGameplayAbility::GetNextAbility()
 	return _Next;
 }
 
-TArray<FActiveGameplayEffectHandle> UXGameplayAbility::ApplyEffectContainer(FGameplayTag EffectContainerTag, const FGameplayEventData& EventData)
+TArray<FActiveGameplayEffectHandle> UXGameplayAbility::ApplyEffectContainer(const FGameplayEventData& EventData)
 {
 	FXGameplayEffectContainer* EffectContainer = EffectContainerMap.Find(EventData.EventTag);
 	TArray<FActiveGameplayEffectHandle> AllEffects;
