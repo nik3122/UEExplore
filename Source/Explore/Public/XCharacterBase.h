@@ -87,6 +87,9 @@ protected:
 	/** Get abilities that this character can afford to activate */
 	UFUNCTION(BlueprintCallable)
 	void GetAffordableAbilities(TArray<UXGameplayAbility*>& MatchingAbilities) const;
+
+	UFUNCTION(BlueprintCallable)
+	void GetActiveAbilitiesByTag(const FGameplayTagContainer TagContainer, TArray<UXGameplayAbility*>& ActiveAbilities) const;
 	
 	/** Get abilities that this character can afford to activate, by tag */
 	UFUNCTION(BlueprintCallable)

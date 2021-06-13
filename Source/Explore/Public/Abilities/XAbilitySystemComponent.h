@@ -23,6 +23,9 @@ public:
 	/* Get Abilities that can be activated given their cost, filtering them by given tag. */
 	void GetAffordableAbilitiesByTag(const FGameplayTagContainer TagContainer, TArray<UXGameplayAbility*>& MatchingAbilities) const;
 
+	UFUNCTION(BlueprintCallable)
+	void GetActiveAbilitiesByTag(const FGameplayTagContainer TagContainer, TArray<UXGameplayAbility*>& ActiveAbilities) const;
+	
 	/* Get the class of the next ability linked to the one given. Useful to chain abilities as combos. */
 	TSubclassOf<UXGameplayAbility> GetNextAbilityByClass(TSubclassOf<UXGameplayAbility> AbilityClass);
 };

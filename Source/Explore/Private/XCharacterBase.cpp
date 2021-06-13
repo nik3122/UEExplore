@@ -142,7 +142,15 @@ void AXCharacterBase::GetAffordableAbilities(TArray<UXGameplayAbility*>& Matchin
 	}
 }
 
-void AXCharacterBase::GetAffordableAbilitiesByTag(FGameplayTagContainer TagContainer,
+void AXCharacterBase::GetActiveAbilitiesByTag(const FGameplayTagContainer TagContainer, TArray<UXGameplayAbility*>& ActiveAbilities) const
+{
+	if (AbilitySystemComponent)
+	{
+		AbilitySystemComponent->GetActiveAbilitiesByTag(TagContainer, ActiveAbilities);
+	}
+}
+
+void AXCharacterBase::GetAffordableAbilitiesByTag(const FGameplayTagContainer TagContainer,
                                                   TArray<UXGameplayAbility*>& MatchingAbilities) const
 {
 	if (AbilitySystemComponent)
