@@ -48,26 +48,3 @@ void UXAbilitySystemComponent::GetActiveAbilitiesByTag(const FGameplayTagContain
 		}
 	}
 }
-
-TSubclassOf<UXGameplayAbility> UXAbilitySystemComponent::GetNextAbilityByClass(const TSubclassOf<UXGameplayAbility> AbilityClass)
-{
-	const UXGameplayAbility* const AbilityClassCDO = AbilityClass.GetDefaultObject();
-	
-	for (const FGameplayAbilitySpec& FoundSpec: ActivatableAbilities.Items)
-	{
-		if (FoundSpec.Ability == AbilityClassCDO)
-		{
-			TSubclassOf<UXGameplayAbility> NewClass = FoundSpec.Ability->GetClass();
-			if (IsValid(NewClass))
-			{
-				const UXGameplayAbility* NewCDO = NewClass.GetDefaultObject();
-				if (IsValid(NewCDO))
-				{
-					return NewCDO->Next;
-				}
-			}
-		}
-	}
-	GEngine->AddOnScreenDebugMessage(0, 5.f, FColor::Red, FString::Printf(TEXT("Ability not found")));
-	return nullptr;
-}

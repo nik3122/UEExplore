@@ -25,7 +25,4 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void GetActiveAbilitiesByTag(const FGameplayTagContainer TagContainer, TArray<UXGameplayAbility*>& ActiveAbilities) const;
-	
-	/* Get the class of the next ability linked to the one given. Useful to chain abilities as combos. */
-	TSubclassOf<UXGameplayAbility> GetNextAbilityByClass(TSubclassOf<UXGameplayAbility> AbilityClass);
 };

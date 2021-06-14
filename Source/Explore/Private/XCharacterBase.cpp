@@ -72,6 +72,13 @@ float AXCharacterBase::GetHealth() const
 	return AttributeSet->GetHealth();
 }
 
+float AXCharacterBase::GetMaxHealth() const
+{
+	if (!AttributeSet)
+		return 1.f;
+	return AttributeSet->GetMaxHealth();
+}
+
 float AXCharacterBase::GetStamina() const
 {
 	if (!AttributeSet)
@@ -161,16 +168,6 @@ void AXCharacterBase::GetAffordableAbilitiesByTag(const FGameplayTagContainer Ta
 	{
 		UE_LOG(LogTemp, Warning, TEXT("No ASC at GetAffordableAbilitiesByTag() time"));
 	}
-}
-
-TSubclassOf <UXGameplayAbility> AXCharacterBase::GetNextAbilityByClass(const TSubclassOf<UXGameplayAbility> AbilityClass) const
-{
-	if (AbilitySystemComponent)
-	{
-		return AbilitySystemComponent->GetNextAbilityByClass(AbilityClass);
-	}
-
-	return nullptr;
 }
 
 void AXCharacterBase::HealthChanged(const FOnAttributeChangeData& Data)
