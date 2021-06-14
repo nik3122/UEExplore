@@ -72,6 +72,13 @@ float AXCharacterBase::GetHealth() const
 	return AttributeSet->GetHealth();
 }
 
+float AXCharacterBase::GetMaxHealth() const
+{
+	if (!AttributeSet)
+		return 1.f;
+	return AttributeSet->GetMaxHealth();
+}
+
 float AXCharacterBase::GetStamina() const
 {
 	if (!AttributeSet)
@@ -142,7 +149,15 @@ void AXCharacterBase::GetAffordableAbilities(TArray<UXGameplayAbility*>& Matchin
 	}
 }
 
-void AXCharacterBase::GetAffordableAbilitiesByTag(FGameplayTagContainer TagContainer,
+void AXCharacterBase::GetActiveAbilitiesByTag(const FGameplayTagContainer TagContainer, TArray<UXGameplayAbility*>& ActiveAbilities) const
+{
+	if (AbilitySystemComponent)
+	{
+		AbilitySystemComponent->GetActiveAbilitiesByTag(TagContainer, ActiveAbilities);
+	}
+}
+
+void AXCharacterBase::GetAffordableAbilitiesByTag(const FGameplayTagContainer TagContainer,
                                                   TArray<UXGameplayAbility*>& MatchingAbilities) const
 {
 	if (AbilitySystemComponent)
@@ -153,16 +168,6 @@ void AXCharacterBase::GetAffordableAbilitiesByTag(FGameplayTagContainer TagConta
 	{
 		UE_LOG(LogTemp, Warning, TEXT("No ASC at GetAffordableAbilitiesByTag() time"));
 	}
-}
-
-TSubclassOf <UXGameplayAbility> AXCharacterBase::GetNextAbilityByClass(const TSubclassOf<UXGameplayAbility> AbilityClass) const
-{
-	if (AbilitySystemComponent)
-	{
-		return AbilitySystemComponent->GetNextAbilityByClass(AbilityClass);
-	}
-
-	return nullptr;
 }
 
 void AXCharacterBase::HealthChanged(const FOnAttributeChangeData& Data)

@@ -27,6 +27,9 @@ public:
 	float GetHealth() const;
 
 	UFUNCTION(BlueprintCallable)
+	float GetMaxHealth() const;
+	
+	UFUNCTION(BlueprintCallable)
 	float GetStamina() const;
 
 	void HandleDamage(float const Damage);
@@ -87,14 +90,13 @@ protected:
 	/** Get abilities that this character can afford to activate */
 	UFUNCTION(BlueprintCallable)
 	void GetAffordableAbilities(TArray<UXGameplayAbility*>& MatchingAbilities) const;
+
+	UFUNCTION(BlueprintCallable)
+	void GetActiveAbilitiesByTag(const FGameplayTagContainer TagContainer, TArray<UXGameplayAbility*>& ActiveAbilities) const;
 	
 	/** Get abilities that this character can afford to activate, by tag */
 	UFUNCTION(BlueprintCallable)
 	void GetAffordableAbilitiesByTag(FGameplayTagContainer TagContainer, TArray<UXGameplayAbility*>& MatchingAbilities) const;
-
-	/* Expose method to get the class of the ability linked to the one given, if exists. */
-	UFUNCTION(BlueprintCallable)
-	TSubclassOf<UXGameplayAbility> GetNextAbilityByClass(const TSubclassOf<UXGameplayAbility> AbilityClass) const;
 
 	/* -- ATTRIBUTE CHANGE CALLBACKS -- **/
 	
