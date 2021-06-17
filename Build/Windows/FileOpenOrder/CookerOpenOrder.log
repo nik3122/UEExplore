@@ -1,0 +1,783 @@
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Maps/CombatSystemSandbox_BuiltData.uasset" 0
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Maps/CombatSystemSandbox_BuiltData.uexp" 1
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Maps/CombatSystemSandbox_BuiltData.ubulk" 2
+"../../../Engine/Content/EditorBlueprintResources/StandardMacros.uasset" 3
+"../../../Engine/Content/EditorBlueprintResources/StandardMacros.uexp" 4
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/Enemies/GE_EnemyAPunchCost.uasset" 5
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/Enemies/GE_EnemyAPunchCost.uexp" 6
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/GA_MeleeBase.uasset" 7
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/GA_MeleeBase.uexp" 8
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/IBP_IDamageable.uasset" 9
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/IBP_IDamageable.uexp" 10
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/BP_PlayerController.uasset" 11
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/BP_PlayerController.uexp" 12
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/BP_GameModeBase.uasset" 13
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/BP_GameModeBase.uexp" 14
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/Player/GE_PlayerStartingAttributes.uasset" 15
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/Player/GE_PlayerStartingAttributes.uexp" 16
+"../../../Engine/Content/EngineMeshes/Humanoid.uasset" 17
+"../../../Engine/Content/EngineMeshes/Humanoid.uexp" 18
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Player/humanoid_mannequin_char_mesh_Skeleton.uasset" 19
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Player/humanoid_mannequin_char_mesh_Skeleton.uexp" 20
+"../../../Engine/Content/Animation/DefaultAnimBoneCompressionSettings.uasset" 21
+"../../../Engine/Content/Animation/DefaultAnimBoneCompressionSettings.uexp" 22
+"../../../Engine/Content/Animation/DefaultAnimCurveCompressionSettings.uasset" 23
+"../../../Engine/Content/Animation/DefaultAnimCurveCompressionSettings.uexp" 24
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/humanoid_mannequin_char_mesh_Anim_root_humanoid_idle.uasset" 25
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/humanoid_mannequin_char_mesh_Anim_root_humanoid_idle.uexp" 26
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/humanoid_mannequin_char_mesh_Anim_root_humanoid_run.uasset" 27
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/humanoid_mannequin_char_mesh_Anim_root_humanoid_run.uexp" 28
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/humanoid_mannequin_char_mesh_Anim_root_humanoid_walk.uasset" 29
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/humanoid_mannequin_char_mesh_Anim_root_humanoid_walk.uexp" 30
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/BS_Idle_Walk_Run.uasset" 31
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/BS_Idle_Walk_Run.uexp" 32
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Jog_Bwd.uasset" 33
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Jog_Bwd.uexp" 34
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Jog_Fwd.uasset" 35
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Jog_Fwd.uexp" 36
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Jog_Left.uasset" 37
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Jog_Left.uexp" 38
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/BS_Strafing.uasset" 39
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/BS_Strafing.uexp" 40
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Player/ABP_humanoid_mannequin.uasset" 41
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Player/ABP_humanoid_mannequin.uexp" 42
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Materials/Blue.uasset" 43
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Materials/Blue.uexp" 44
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/ExternalAnimations/humanoid_mannequin_PhysicsAsset.uasset" 45
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/ExternalAnimations/humanoid_mannequin_PhysicsAsset.uexp" 46
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Player/humanoid_mannequin.uasset" 47
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Player/humanoid_mannequin.uexp" 48
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/UI/WB_PauseMenu.uasset" 49
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/UI/WB_PauseMenu.uexp" 50
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/BP_PlayerCharacter.uasset" 51
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/BP_PlayerCharacter.uexp" 52
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/humanoid_mannequin_roll_root_humanoid_roll.uasset" 53
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/humanoid_mannequin_roll_root_humanoid_roll.uexp" 54
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Montages/AM_Roll.uasset" 55
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Montages/AM_Roll.uexp" 56
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/Player/GA_Dodge.uasset" 57
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/Player/GA_Dodge.uexp" 58
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/GE_MeleeDamage.uasset" 59
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/GE_MeleeDamage.uexp" 60
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/AnimNotify/AN_ComboWindow.uasset" 61
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/AnimNotify/AN_ComboWindow.uexp" 62
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/AnimNotify/AN_AttackWindow.uasset" 63
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/AnimNotify/AN_AttackWindow.uexp" 64
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Combat/humanoid_mannequin_attacks_root_humanoid_attack_sword_1.uasset" 65
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Combat/humanoid_mannequin_attacks_root_humanoid_attack_sword_1.uexp" 66
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Montages/AM_LightAttack_1.uasset" 67
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Montages/AM_LightAttack_1.uexp" 68
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Combat/humanoid_mannequin_attacks_root_humanoid_attack_sword_2.uasset" 69
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Combat/humanoid_mannequin_attacks_root_humanoid_attack_sword_2.uexp" 70
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Montages/AM_LightAttack_2.uasset" 71
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Montages/AM_LightAttack_2.uexp" 72
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/Player/GA_LightAttackCombo.uasset" 73
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/Player/GA_LightAttackCombo.uexp" 74
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Combat/humanoid_mannequin_thrust.uasset" 75
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Combat/humanoid_mannequin_thrust.uexp" 76
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Montages/AM_Sword_Thrust.uasset" 77
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Montages/AM_Sword_Thrust.uexp" 78
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/Player/GA_SwordThrust.uasset" 79
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/Player/GA_SwordThrust.uexp" 80
+"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_M.uasset" 81
+"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_M.uexp" 82
+"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_M.ubulk" 83
+"../../../Engine/Content/Functions/Engine_MaterialFunctions01/Opacity/CameraDepthFade.uasset" 84
+"../../../Engine/Content/Functions/Engine_MaterialFunctions01/Opacity/CameraDepthFade.uexp" 85
+"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_N.uasset" 86
+"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_N.uexp" 87
+"../../../Engine/Content/EngineMaterials/T_Default_Material_Grid_N.ubulk" 88
+"../../../Engine/Content/EngineMaterials/WorldGridMaterial.uasset" 89
+"../../../Engine/Content/EngineMaterials/WorldGridMaterial.uexp" 90
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Weapons/Sword/Sword.uasset" 91
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Weapons/Sword/Sword.uexp" 92
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Weapons/Sword/Sword.ubulk" 93
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/CubeMaterial.uasset" 94
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/CubeMaterial.uexp" 95
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Weapons/BP_SwordOfUranus.uasset" 96
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Weapons/BP_SwordOfUranus.uexp" 97
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Items/SwordOfUranus.uasset" 98
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Items/SwordOfUranus.uexp" 99
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Weapons/BP_MeleeWeaponBase.uasset" 100
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Weapons/BP_MeleeWeaponBase.uexp" 101
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/BP_CharacterBase.uasset" 102
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/BP_CharacterBase.uexp" 103
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Materials/Meleehit.uasset" 104
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Materials/Meleehit.uexp" 105
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Particles/MeleeHit.uasset" 106
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Particles/MeleeHit.uexp" 107
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/GC_HitEffect.uasset" 108
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/GC_HitEffect.uexp" 109
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/EnemyBig/enemy_big_A_anim_Skeleton.uasset" 110
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/EnemyBig/enemy_big_A_anim_Skeleton.uexp" 111
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_A_anim_Anim_root_enemy_A_punch_1.uasset" 112
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_A_anim_Anim_root_enemy_A_punch_1.uexp" 113
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/Montages/AM_EnemyA_Punch.uasset" 114
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/Montages/AM_EnemyA_Punch.uexp" 115
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_A_anim_Anim_root_enemy_A_punch_2.uasset" 116
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_A_anim_Anim_root_enemy_A_punch_2.uexp" 117
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/Montages/AM_EnemyA_Verga.uasset" 118
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/Montages/AM_EnemyA_Verga.uexp" 119
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/Enemies/GA_EnemyAMelee1.uasset" 120
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/Enemies/GA_EnemyAMelee1.uexp" 121
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/Player/GE_SwordPoiseDrain.uasset" 122
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/Player/GE_SwordPoiseDrain.uexp" 123
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Combat/sword_and_shield_strafe.uasset" 124
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Combat/sword_and_shield_strafe.uexp" 125
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/humanoid_mannequin_char_mesh_Anim_human_backstep.uasset" 126
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/humanoid_mannequin_char_mesh_Anim_human_backstep.uexp" 127
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Jog_Right.uasset" 128
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Jog_Right.uexp" 129
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Backups/Jog_Backward.uasset" 130
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Backups/Jog_Backward.uexp" 131
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Backups/Jog_Backward_Diagonal.uasset" 132
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Backups/Jog_Backward_Diagonal.uexp" 133
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Backups/Jog_Forward.uasset" 134
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Backups/Jog_Forward.uexp" 135
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Backups/Jog_Strafe_Left.uasset" 136
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Backups/Jog_Strafe_Left.uexp" 137
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Backups/Jog_Strafe_Right.uasset" 138
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Backups/Jog_Strafe_Right.uexp" 139
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Backups/xbot_Jog_Forward_Diagonal_Anim_mixamo_com.uasset" 140
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/Player/Locomotion/Backups/xbot_Jog_Forward_Diagonal_Anim_mixamo_com.uexp" 141
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Combat/EAttackRange.uasset" 142
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Combat/EAttackRange.uexp" 143
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/BP_XFunctionLibrary.uasset" 144
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/BP_XFunctionLibrary.uexp" 145
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/BTD_AttackDistanceCheck.uasset" 146
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/BTD_AttackDistanceCheck.uexp" 147
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/BTD_DiceThrow.uasset" 148
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/BTD_DiceThrow.uexp" 149
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/BB_Enemy.uasset" 150
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/BB_Enemy.uexp" 151
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/SubTrees/BB_Attack.uasset" 152
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/SubTrees/BB_Attack.uexp" 153
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/BTD_ShouldStrafe.uasset" 154
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/BTD_ShouldStrafe.uexp" 155
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/Enemies/GE_EnemyAStartingAttributes.uasset" 156
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Abilities/Enemies/GE_EnemyAStartingAttributes.uexp" 157
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_DoMeleeAttack.uasset" 158
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_DoMeleeAttack.uexp" 159
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/SubTrees/BT_BaseAttack.uasset" 160
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/SubTrees/BT_BaseAttack.uexp" 161
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_FindRandomPatrol.uasset" 162
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_FindRandomPatrol.uexp" 163
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_SetChaseSpeed.uasset" 164
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_SetChaseSpeed.uexp" 165
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/BT_Enemy.uasset" 166
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/BT_Enemy.uexp" 167
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Enemies/BP_EnemyController.uasset" 168
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Enemies/BP_EnemyController.uexp" 169
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/UI/WB_EnemyHealth.uasset" 170
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/UI/WB_EnemyHealth.uexp" 171
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Enemies/BP_EnemyCharacter.uasset" 172
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Enemies/BP_EnemyCharacter.uexp" 173
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_ActivateAbility.uasset" 174
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_ActivateAbility.uexp" 175
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_DecideAttackAbilities.uasset" 176
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_DecideAttackAbilities.uexp" 177
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_SetAttackLocation.uasset" 178
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_SetAttackLocation.uexp" 179
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_Strafe.uasset" 180
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_Strafe.uexp" 181
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/SubTrees/BT_Attack.uasset" 182
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/SubTrees/BT_Attack.uexp" 183
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_DistancingJump.uasset" 184
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_DistancingJump.uexp" 185
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_FindRandomDistance.uasset" 186
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_FindRandomDistance.uexp" 187
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_FindStrafeLocation.uasset" 188
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/AI/Tasks/BTT_FindStrafeLocation.uexp" 189
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Mesh/UE4_Mannequin_Skeleton.uasset" 190
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Mesh/UE4_Mannequin_Skeleton.uexp" 191
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Animations/ThirdPersonJump_Loop.uasset" 192
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Animations/ThirdPersonJump_Loop.uexp" 193
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Animations/ThirdPersonJump_Start.uasset" 194
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Animations/ThirdPersonJump_Start.uexp" 195
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Animations/ThirdPerson_Jump.uasset" 196
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Animations/ThirdPerson_Jump.uexp" 197
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Animations/ThirdPersonRun.uasset" 198
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Animations/ThirdPersonRun.uexp" 199
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Animations/ThirdPersonWalk.uasset" 200
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Animations/ThirdPersonWalk.uexp" 201
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Animations/ThirdPersonIdle.uasset" 202
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Animations/ThirdPersonIdle.uexp" 203
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Animations/ThirdPerson_IdleRun_2D.uasset" 204
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Animations/ThirdPerson_IdleRun_2D.uexp" 205
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Animations/ThirdPerson_AnimBP.uasset" 206
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Animations/ThirdPerson_AnimBP.uexp" 207
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/T_ML_Rubber_Blue_01_D.uasset" 208
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/T_ML_Rubber_Blue_01_D.uexp" 209
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/T_ML_Rubber_Blue_01_D.ubulk" 210
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/T_ML_Rubber_Blue_01_N.uasset" 211
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/T_ML_Rubber_Blue_01_N.uexp" 212
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/T_ML_Rubber_Blue_01_N.ubulk" 213
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/ML_GlossyBlack_Latex_UE4.uasset" 214
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/ML_GlossyBlack_Latex_UE4.uexp" 215
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/ML_Plastic_Shiny_Beige.uasset" 216
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/ML_Plastic_Shiny_Beige.uexp" 217
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Textures/T_UE4Logo_Mask.uasset" 218
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Textures/T_UE4Logo_Mask.uexp" 219
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Textures/T_UE4Logo_Mask.ubulk" 220
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/ML_Plastic_Shiny_Beige_LOGO.uasset" 221
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/ML_Plastic_Shiny_Beige_LOGO.uexp" 222
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/T_ML_Aluminum01.uasset" 223
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/T_ML_Aluminum01.uexp" 224
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/T_ML_Aluminum01.ubulk" 225
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/T_ML_Aluminum01_N.uasset" 226
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/T_ML_Aluminum01_N.uexp" 227
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/T_ML_Aluminum01_N.ubulk" 228
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/ML_SoftMetal_UE4.uasset" 229
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Materials/MaterialLayers/ML_SoftMetal_UE4.uexp" 230
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Mesh/SK_Mannequin.uasset" 231
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Mesh/SK_Mannequin.uexp" 232
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Mesh/SK_Mannequin_PhysicsAsset.uasset" 233
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Mesh/SK_Mannequin_PhysicsAsset.uexp" 234
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Textures/T_Male_Mask.uasset" 235
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Textures/T_Male_Mask.uexp" 236
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Textures/T_Male_Mask.ubulk" 237
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Textures/T_Male_N.uasset" 238
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Textures/T_Male_N.uexp" 239
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Mannequin/Character/Textures/T_Male_N.ubulk" 240
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Player/humanoid_mannequin_char_mesh_PhysicsAsset.uasset" 241
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/Player/humanoid_mannequin_char_mesh_PhysicsAsset.uexp" 242
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/ExternalAnimations/humanoid_mannequin_Anim.uasset" 243
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/ExternalAnimations/humanoid_mannequin_Anim.uexp" 244
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/ExternalAnimations/Mixamo/MixamoHumanoid_BoneMapping.uasset" 245
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/ExternalAnimations/Mixamo/MixamoHumanoid_BoneMapping.uexp" 246
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/ExternalAnimations/Mixamo/Mixamo_PhysicsAsset.uasset" 247
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/ExternalAnimations/Mixamo/Mixamo_PhysicsAsset.uexp" 248
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/ExternalAnimations/Mixamo/Mixamo_Skeleton.uasset" 249
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/ExternalAnimations/Mixamo/Mixamo_Skeleton.uexp" 250
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/ExternalAnimations/Mixamo/Materials/Beta_HighLimbsGeoSG2.uasset" 251
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/ExternalAnimations/Mixamo/Materials/Beta_HighLimbsGeoSG2.uexp" 252
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/ExternalAnimations/Mixamo/Materials/Beta_Joints_MAT.uasset" 253
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/ExternalAnimations/Mixamo/Materials/Beta_Joints_MAT.uexp" 254
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/ExternalAnimations/Mixamo/Mixamo_SM.uasset" 255
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/ExternalAnimations/Mixamo/Mixamo_SM.uexp" 256
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Materials/Decal.uasset" 257
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Materials/Decal.uexp" 258
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/UI/Demo/WBP_DemoWelcome.uasset" 259
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/UI/Demo/WBP_DemoWelcome.uexp" 260
+"../../../Engine/Content/ArtTools/RenderToTexture/Meshes/S_1_Unit_Plane.uasset" 261
+"../../../Engine/Content/ArtTools/RenderToTexture/Meshes/S_1_Unit_Plane.uexp" 262
+"../../../Engine/Content/EngineMaterials/DefaultMaterial.uasset" 263
+"../../../Engine/Content/EngineMaterials/DefaultMaterial.uexp" 264
+"../../../Engine/Content/BasicShapes/Cone.uasset" 265
+"../../../Engine/Content/BasicShapes/Cone.uexp" 266
+"../../../Engine/Content/BasicShapes/Cube.uasset" 267
+"../../../Engine/Content/BasicShapes/Cube.uexp" 268
+"../../../Engine/Content/BasicShapes/Plane.uasset" 269
+"../../../Engine/Content/BasicShapes/Plane.uexp" 270
+"../../../Engine/Content/BasicShapes/Sphere.uasset" 271
+"../../../Engine/Content/BasicShapes/Sphere.uexp" 272
+"../../../Engine/Content/EditorLandscapeResources/DataLayer.uasset" 273
+"../../../Engine/Content/EditorLandscapeResources/DataLayer.uexp" 274
+"../../../Engine/Content/EditorLandscapeResources/DefaultAlphaTexture.uasset" 275
+"../../../Engine/Content/EditorLandscapeResources/DefaultAlphaTexture.uexp" 276
+"../../../Engine/Content/EditorMaterials/MAT_Groups_Toggle.uasset" 277
+"../../../Engine/Content/EditorMaterials/MAT_Groups_Toggle.uexp" 278
+"../../../Engine/Content/EditorMaterials/MAT_Groups_Visibility.uasset" 279
+"../../../Engine/Content/EditorMaterials/MAT_Groups_Visibility.uexp" 280
+"../../../Engine/Content/EditorMaterials/PreviewShadowIndicator.uasset" 281
+"../../../Engine/Content/EditorMaterials/PreviewShadowIndicator.uexp" 282
+"../../../Engine/Content/EditorMaterials/PreviewShadowIndicator.ubulk" 283
+"../../../Engine/Content/EditorMaterials/PreviewShadowIndicatorMaterial.uasset" 284
+"../../../Engine/Content/EditorMaterials/PreviewShadowIndicatorMaterial.uexp" 285
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_ColorTrack.uasset" 286
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_ColorTrack.uexp" 287
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Anim.uasset" 288
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Anim.uexp" 289
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_AudioMaster.uasset" 290
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_AudioMaster.uexp" 291
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Director.uasset" 292
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Director.uexp" 293
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Event.uasset" 294
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Event.uexp" 295
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Fade.uasset" 296
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Fade.uexp" 297
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Float.uasset" 298
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Float.uexp" 299
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Move.uasset" 300
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Move.uexp" 301
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Slomo.uasset" 302
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Slomo.uexp" 303
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Sound.uasset" 304
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Sound.uexp" 305
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Vector.uasset" 306
+"../../../Engine/Content/EditorMaterials/MatineeGroups/MAT_Groups_Vector.uexp" 307
+"../../../Engine/Content/EditorMaterials/ParticleSystems/PSysThumbnail_NoImage.uasset" 308
+"../../../Engine/Content/EditorMaterials/ParticleSystems/PSysThumbnail_NoImage.uexp" 309
+"../../../Engine/Content/EditorMaterials/ParticleSystems/PSysThumbnail_NoImage.ubulk" 310
+"../../../Engine/Content/EditorMaterials/ParticleSystems/PSysThumbnail_OOD.uasset" 311
+"../../../Engine/Content/EditorMaterials/ParticleSystems/PSysThumbnail_OOD.uexp" 312
+"../../../Engine/Content/EditorMaterials/ParticleSystems/PSysThumbnail_OOD.ubulk" 313
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat3Components.uasset" 314
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat3Components.uexp" 315
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/MakeFloat3.uasset" 316
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/MakeFloat3.uexp" 317
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/MakeFloat4.uasset" 318
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/MakeFloat4.uexp" 319
+"../../../Engine/Content/EditorMaterials/WorldPartition/WorldPartitionSpatialHashGridPreviewMaterial.uasset" 320
+"../../../Engine/Content/EditorMaterials/WorldPartition/WorldPartitionSpatialHashGridPreviewMaterial.uexp" 321
+"../../../Engine/Content/EditorMaterials/Camera/CineMat.uasset" 322
+"../../../Engine/Content/EditorMaterials/Camera/CineMat.uexp" 323
+"../../../Engine/Content/EditorMaterials/Camera/MI_CineMat_Rig.uasset" 324
+"../../../Engine/Content/EditorMaterials/Camera/MI_CineMat_Rig.uexp" 325
+"../../../Engine/Content/EditorMeshes/Camera/SM_CraneRig_Arm.uasset" 326
+"../../../Engine/Content/EditorMeshes/Camera/SM_CraneRig_Arm.uexp" 327
+"../../../Engine/Content/EditorMeshes/Camera/SM_CraneRig_Base.uasset" 328
+"../../../Engine/Content/EditorMeshes/Camera/SM_CraneRig_Base.uexp" 329
+"../../../Engine/Content/EditorMeshes/Camera/SM_CraneRig_Body.uasset" 330
+"../../../Engine/Content/EditorMeshes/Camera/SM_CraneRig_Body.uexp" 331
+"../../../Engine/Content/EditorMeshes/Camera/SM_CraneRig_Mount.uasset" 332
+"../../../Engine/Content/EditorMeshes/Camera/SM_CraneRig_Mount.uexp" 333
+"../../../Engine/Content/EditorMeshes/Camera/SM_RailRig_Mount.uasset" 334
+"../../../Engine/Content/EditorMeshes/Camera/SM_RailRig_Mount.uexp" 335
+"../../../Engine/Content/EditorMeshes/Camera/SM_RailRig_Track.uasset" 336
+"../../../Engine/Content/EditorMeshes/Camera/SM_RailRig_Track.uexp" 337
+"../../../Engine/Content/EditorResources/BSPVertex.uasset" 338
+"../../../Engine/Content/EditorResources/BSPVertex.uexp" 339
+"../../../Engine/Content/EditorResources/EmptyActor.uasset" 340
+"../../../Engine/Content/EditorResources/EmptyActor.uexp" 341
+"../../../Engine/Content/EditorResources/S_Actor.uasset" 342
+"../../../Engine/Content/EditorResources/S_Actor.uexp" 343
+"../../../Engine/Content/EditorResources/S_Actor.ubulk" 344
+"../../../Engine/Content/EditorResources/S_BoxReflectionCapture.uasset" 345
+"../../../Engine/Content/EditorResources/S_BoxReflectionCapture.uexp" 346
+"../../../Engine/Content/EditorResources/S_Note.uasset" 347
+"../../../Engine/Content/EditorResources/S_Note.uexp" 348
+"../../../Engine/Content/EditorResources/S_Solver.uasset" 349
+"../../../Engine/Content/EditorResources/S_Solver.uexp" 350
+"../../../Engine/Content/EditorResources/S_Solver.ubulk" 351
+"../../../Engine/Content/EditorResources/S_Terrain.uasset" 352
+"../../../Engine/Content/EditorResources/S_Terrain.uexp" 353
+"../../../Engine/Content/EditorResources/S_Terrain.ubulk" 354
+"../../../Engine/Content/EditorResources/S_Trigger.uasset" 355
+"../../../Engine/Content/EditorResources/S_Trigger.uexp" 356
+"../../../Engine/Content/EditorResources/S_Trigger.ubulk" 357
+"../../../Engine/Content/EditorResources/S_TriggerBox.uasset" 358
+"../../../Engine/Content/EditorResources/S_TriggerBox.uexp" 359
+"../../../Engine/Content/EditorResources/S_TriggerCapsule.uasset" 360
+"../../../Engine/Content/EditorResources/S_TriggerCapsule.uexp" 361
+"../../../Engine/Content/EditorResources/S_TriggerSphere.uasset" 362
+"../../../Engine/Content/EditorResources/S_TriggerSphere.uexp" 363
+"../../../Engine/Content/EditorResources/LightIcons/S_LightError.uasset" 364
+"../../../Engine/Content/EditorResources/LightIcons/S_LightError.uexp" 365
+"../../../Engine/Content/EditorResources/SequenceRecorder/Countdown.uasset" 366
+"../../../Engine/Content/EditorResources/SequenceRecorder/Countdown.uexp" 367
+"../../../Engine/Content/EditorResources/SequenceRecorder/RecordingIndicator.uasset" 368
+"../../../Engine/Content/EditorResources/SequenceRecorder/RecordingIndicator.uexp" 369
+"../../../Engine/Content/EngineDamageTypes/DmgTypeBP_Environmental.uasset" 370
+"../../../Engine/Content/EngineDamageTypes/DmgTypeBP_Environmental.uexp" 371
+"../../../Engine/Content/EngineDebugMaterials/DebugEditorMaterial.uasset" 372
+"../../../Engine/Content/EngineDebugMaterials/DebugEditorMaterial.uexp" 373
+"../../../Engine/Content/EngineDebugMaterials/DebugMeshMaterial.uasset" 374
+"../../../Engine/Content/EngineDebugMaterials/DebugMeshMaterial.uexp" 375
+"../../../Engine/Content/EngineDebugMaterials/M_SimpleUnlitTranslucent.uasset" 376
+"../../../Engine/Content/EngineDebugMaterials/M_SimpleUnlitTranslucent.uexp" 377
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/CameraDirectionVector.uasset" 378
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/CameraDirectionVector.uexp" 379
+"../../../Engine/Content/EngineDebugMaterials/VolumeToRender.uasset" 380
+"../../../Engine/Content/EngineDebugMaterials/VolumeToRender.uexp" 381
+"../../../Engine/Content/EngineDebugMaterials/M_VolumeRenderSphereTracePP.uasset" 382
+"../../../Engine/Content/EngineDebugMaterials/M_VolumeRenderSphereTracePP.uexp" 383
+"../../../Engine/Content/Functions/Engine_MaterialFunctions01/Shading/ConvertFromDiffSpec.uasset" 384
+"../../../Engine/Content/Functions/Engine_MaterialFunctions01/Shading/ConvertFromDiffSpec.uexp" 385
+"../../../Engine/Content/EngineDebugMaterials/VertexColorMaterial.uasset" 386
+"../../../Engine/Content/EngineDebugMaterials/VertexColorMaterial.uexp" 387
+"../../../Engine/Content/EngineDebugMaterials/WireframeMaterial.uasset" 388
+"../../../Engine/Content/EngineDebugMaterials/WireframeMaterial.uexp" 389
+"../../../Engine/Content/EngineFonts/Faces/RobotoBoldItalic.uasset" 390
+"../../../Engine/Content/EngineFonts/Faces/RobotoBoldItalic.uexp" 391
+"../../../Engine/Content/EngineFonts/Faces/RobotoBoldItalic.ufont" 392
+"../../../Engine/Content/EngineFonts/Faces/RobotoRegular.uasset" 393
+"../../../Engine/Content/EngineFonts/Faces/RobotoRegular.uexp" 394
+"../../../Engine/Content/EngineFonts/Faces/RobotoRegular.ufont" 395
+"../../../Engine/Content/EngineFonts/Faces/DroidSansFallback.uasset" 396
+"../../../Engine/Content/EngineFonts/Faces/DroidSansFallback.uexp" 397
+"../../../Engine/Content/EngineFonts/Faces/DroidSansFallback.ufont" 398
+"../../../Engine/Content/EngineFonts/Faces/RobotoLight.uasset" 399
+"../../../Engine/Content/EngineFonts/Faces/RobotoLight.uexp" 400
+"../../../Engine/Content/EngineFonts/Faces/RobotoLight.ufont" 401
+"../../../Engine/Content/EngineFonts/Faces/RobotoItalic.uasset" 402
+"../../../Engine/Content/EngineFonts/Faces/RobotoItalic.uexp" 403
+"../../../Engine/Content/EngineFonts/Faces/RobotoItalic.ufont" 404
+"../../../Engine/Content/EngineFonts/Faces/RobotoBold.uasset" 405
+"../../../Engine/Content/EngineFonts/Faces/RobotoBold.uexp" 406
+"../../../Engine/Content/EngineFonts/Faces/RobotoBold.ufont" 407
+"../../../Engine/Content/EngineFonts/Roboto.uasset" 408
+"../../../Engine/Content/EngineFonts/Roboto.uexp" 409
+"../../../Engine/Content/EngineMaterials/BaseFlattenEmissiveMap.uasset" 410
+"../../../Engine/Content/EngineMaterials/BaseFlattenEmissiveMap.uexp" 411
+"../../../Engine/Content/EngineMaterials/BaseFlattenDiffuseMap.uasset" 412
+"../../../Engine/Content/EngineMaterials/BaseFlattenDiffuseMap.uexp" 413
+"../../../Engine/Content/EngineMaterials/BaseFlattenGrayscaleMap.uasset" 414
+"../../../Engine/Content/EngineMaterials/BaseFlattenGrayscaleMap.uexp" 415
+"../../../Engine/Content/EngineMaterials/BaseFlattenNormalMap.uasset" 416
+"../../../Engine/Content/EngineMaterials/BaseFlattenNormalMap.uexp" 417
+"../../../Engine/Content/EngineMaterials/BaseFlattenMaterial.uasset" 418
+"../../../Engine/Content/EngineMaterials/BaseFlattenMaterial.uexp" 419
+"../../../Engine/Content/EngineMaterials/BaseFlattenEmissiveMap_VT.uasset" 420
+"../../../Engine/Content/EngineMaterials/BaseFlattenEmissiveMap_VT.uexp" 421
+"../../../Engine/Content/EngineMaterials/BaseFlattenDiffuseMap_VT.uasset" 422
+"../../../Engine/Content/EngineMaterials/BaseFlattenDiffuseMap_VT.uexp" 423
+"../../../Engine/Content/EngineMaterials/BaseFlattenGrayscaleMap_VT.uasset" 424
+"../../../Engine/Content/EngineMaterials/BaseFlattenGrayscaleMap_VT.uexp" 425
+"../../../Engine/Content/EngineMaterials/BaseFlattenNormalMap_VT.uasset" 426
+"../../../Engine/Content/EngineMaterials/BaseFlattenNormalMap_VT.uexp" 427
+"../../../Engine/Content/EngineMaterials/BaseFlattenMaterial_VT.uasset" 428
+"../../../Engine/Content/EngineMaterials/BaseFlattenMaterial_VT.uexp" 429
+"../../../Engine/Content/EngineMaterials/BlueNoise.uasset" 430
+"../../../Engine/Content/EngineMaterials/BlueNoise.uexp" 431
+"../../../Engine/Content/EngineMaterials/DefaultBloomKernel.uasset" 432
+"../../../Engine/Content/EngineMaterials/DefaultBloomKernel.uexp" 433
+"../../../Engine/Content/EngineMaterials/DefaultBokeh.uasset" 434
+"../../../Engine/Content/EngineMaterials/DefaultBokeh.uexp" 435
+"../../../Engine/Content/EngineMaterials/DefaultDiffuse.uasset" 436
+"../../../Engine/Content/EngineMaterials/DefaultDiffuse.uexp" 437
+"../../../Engine/Content/EngineMaterials/DefaultDiffuse.ubulk" 438
+"../../../Engine/Content/EngineMaterials/DefaultDeferredDecalMaterial.uasset" 439
+"../../../Engine/Content/EngineMaterials/DefaultDeferredDecalMaterial.uexp" 440
+"../../../Engine/Content/EngineMaterials/DefaultLightFunctionMaterial.uasset" 441
+"../../../Engine/Content/EngineMaterials/DefaultLightFunctionMaterial.uexp" 442
+"../../../Engine/Content/EngineMaterials/DefaultPhysicalMaterial.uasset" 443
+"../../../Engine/Content/EngineMaterials/DefaultPhysicalMaterial.uexp" 444
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.uasset" 445
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.uexp" 446
+"../../../Engine/Content/EngineMaterials/DefaultPostProcessMaterial.uasset" 447
+"../../../Engine/Content/EngineMaterials/DefaultPostProcessMaterial.uexp" 448
+"../../../Engine/Content/EngineFonts/RobotoDistanceField.uasset" 449
+"../../../Engine/Content/EngineFonts/RobotoDistanceField.uexp" 450
+"../../../Engine/Content/EngineMaterials/DefaultTextMaterialOpaque.uasset" 451
+"../../../Engine/Content/EngineMaterials/DefaultTextMaterialOpaque.uexp" 452
+"../../../Engine/Content/EngineMaterials/DefaultWhiteGrid.uasset" 453
+"../../../Engine/Content/EngineMaterials/DefaultWhiteGrid.uexp" 454
+"../../../Engine/Content/EngineMaterials/DefaultWhiteGrid.ubulk" 455
+"../../../Engine/Content/EngineMaterials/DefaultWhiteGrid_Low.uasset" 456
+"../../../Engine/Content/EngineMaterials/DefaultWhiteGrid_Low.uexp" 457
+"../../../Engine/Content/EngineMaterials/EmissiveMeshMaterial.uasset" 458
+"../../../Engine/Content/EngineMaterials/EmissiveMeshMaterial.uexp" 459
+"../../../Engine/Content/EngineMaterials/GizmoMaterial.uasset" 460
+"../../../Engine/Content/EngineMaterials/GizmoMaterial.uexp" 461
+"../../../Engine/Content/EngineMaterials/Good64x64TilingNoiseHighFreq.uasset" 462
+"../../../Engine/Content/EngineMaterials/Good64x64TilingNoiseHighFreq.uexp" 463
+"../../../Engine/Content/EngineMaterials/MiniFont.uasset" 464
+"../../../Engine/Content/EngineMaterials/MiniFont.uexp" 465
+"../../../Engine/Content/EngineMaterials/InvalidLightmapSettings.uasset" 466
+"../../../Engine/Content/EngineMaterials/InvalidLightmapSettings.uexp" 467
+"../../../Engine/Content/EngineMaterials/InvalidLightmapSettings.ubulk" 468
+"../../../Engine/Content/EngineMaterials/M_InvalidLightmapSettings.uasset" 469
+"../../../Engine/Content/EngineMaterials/M_InvalidLightmapSettings.uexp" 470
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/WorldPositionOffset/CameraOffset.uasset" 471
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/WorldPositionOffset/CameraOffset.uexp" 472
+"../../../Engine/Content/EngineMaterials/PhAT_JointLimitMaterial.uasset" 473
+"../../../Engine/Content/EngineMaterials/PhAT_JointLimitMaterial.uexp" 474
+"../../../Engine/Content/EngineMaterials/PreintegratedSkinBRDF.uasset" 475
+"../../../Engine/Content/EngineMaterials/PreintegratedSkinBRDF.uexp" 476
+"../../../Engine/Content/EngineMaterials/RemoveSurfaceMaterial.uasset" 477
+"../../../Engine/Content/EngineMaterials/RemoveSurfaceMaterial.uexp" 478
+"../../../Engine/Content/EngineMaterials/WeightMapPlaceholderTexture.uasset" 479
+"../../../Engine/Content/EngineMaterials/WeightMapPlaceholderTexture.uexp" 480
+"../../../Engine/Content/EngineResources/WhiteSquareTexture.uasset" 481
+"../../../Engine/Content/EngineResources/WhiteSquareTexture.uexp" 482
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough.uasset" 483
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough.uexp" 484
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Masked.uasset" 485
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Masked.uexp" 486
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Opaque.uasset" 487
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Opaque.uexp" 488
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Masked_OneSided.uasset" 489
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Masked_OneSided.uexp" 490
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Opaque_OneSided.uasset" 491
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Opaque_OneSided.uexp" 492
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Translucent.uasset" 493
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Translucent.uexp" 494
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Translucent_OneSided.uasset" 495
+"../../../Engine/Content/EngineMaterials/Widget3DPassThrough_Translucent_OneSided.uexp" 496
+"../../../Engine/Content/EngineMeshes/Sphere.uasset" 497
+"../../../Engine/Content/EngineMeshes/Sphere.uexp" 498
+"../../../Engine/Content/EngineResources/Black.uasset" 499
+"../../../Engine/Content/EngineResources/Black.uexp" 500
+"../../../Engine/Content/EngineResources/DefaultTextureCube.uasset" 501
+"../../../Engine/Content/EngineResources/DefaultTextureCube.uexp" 502
+"../../../Engine/Content/EngineResources/DefaultVolumeTexture2D.uasset" 503
+"../../../Engine/Content/EngineResources/DefaultVolumeTexture2D.uexp" 504
+"../../../Engine/Content/EngineResources/DefaultVolumeTexture.uasset" 505
+"../../../Engine/Content/EngineResources/DefaultVolumeTexture.uexp" 506
+"../../../Engine/Content/EngineResources/GradientTexture0.uasset" 507
+"../../../Engine/Content/EngineResources/GradientTexture0.uexp" 508
+"../../../Engine/Content/EngineSky/VolumetricClouds/T_NoiseErosion.uasset" 509
+"../../../Engine/Content/EngineSky/VolumetricClouds/T_NoiseErosion.uexp" 510
+"../../../Engine/Content/EngineSky/VolumetricClouds/T_NoiseErosion.ubulk" 511
+"../../../Engine/Content/EngineSky/VolumetricClouds/T_VolumeNoiseErosion32.uasset" 512
+"../../../Engine/Content/EngineSky/VolumetricClouds/T_VolumeNoiseErosion32.uexp" 513
+"../../../Engine/Content/EngineSky/VolumetricClouds/T_NoiseShape64.uasset" 514
+"../../../Engine/Content/EngineSky/VolumetricClouds/T_NoiseShape64.uexp" 515
+"../../../Engine/Content/EngineSky/VolumetricClouds/T_NoiseShape64.ubulk" 516
+"../../../Engine/Content/EngineSky/VolumetricClouds/T_VolumeNoiseShape64.uasset" 517
+"../../../Engine/Content/EngineSky/VolumetricClouds/T_VolumeNoiseShape64.uexp" 518
+"../../../Engine/Content/EngineSky/VolumetricClouds/CloudGradientTexture.uasset" 519
+"../../../Engine/Content/EngineSky/VolumetricClouds/CloudGradientTexture.uexp" 520
+"../../../Engine/Content/EngineSky/VolumetricClouds/CloudWeatherTexture.uasset" 521
+"../../../Engine/Content/EngineSky/VolumetricClouds/CloudWeatherTexture.uexp" 522
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/MakeFloat2.uasset" 523
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/MakeFloat2.uexp" 524
+"../../../Engine/Content/EngineSky/VolumetricClouds/m_SimpleVolumetricCloud.uasset" 525
+"../../../Engine/Content/EngineSky/VolumetricClouds/m_SimpleVolumetricCloud.uexp" 526
+"../../../Engine/Content/EngineSky/VolumetricClouds/m_SimpleVolumetricCloud_Inst.uasset" 527
+"../../../Engine/Content/EngineSky/VolumetricClouds/m_SimpleVolumetricCloud_Inst.uexp" 528
+"../../../Engine/Content/EngineSounds/Master.uasset" 529
+"../../../Engine/Content/EngineSounds/Master.uexp" 530
+"../../../Engine/Content/Functions/Engine_MaterialFunctions01/Shading/PowerToRoughness.uasset" 531
+"../../../Engine/Content/Functions/Engine_MaterialFunctions01/Shading/PowerToRoughness.uexp" 532
+"../../../Engine/Content/Maps/Templates/Thumbnails/Default.uasset" 533
+"../../../Engine/Content/Maps/Templates/Thumbnails/Default.uexp" 534
+"../../../Engine/Content/Maps/Templates/Thumbnails/TimeOfDay.uasset" 535
+"../../../Engine/Content/Maps/Templates/Thumbnails/TimeOfDay.uexp" 536
+"../../../Engine/Content/Maps/Templates/Thumbnails/VR-Basic.uasset" 537
+"../../../Engine/Content/Maps/Templates/Thumbnails/VR-Basic.uexp" 538
+"../../../Engine/Content/MobileResources/T_MobileControls_texture.uasset" 539
+"../../../Engine/Content/MobileResources/T_MobileControls_texture.uexp" 540
+"../../../Engine/Content/MobileResources/T_MobileMenu2.uasset" 541
+"../../../Engine/Content/MobileResources/T_MobileMenu2.uexp" 542
+"../../../Engine/Content/MobileResources/HUD/AnalogHat.uasset" 543
+"../../../Engine/Content/MobileResources/HUD/AnalogHat.uexp" 544
+"../../../Engine/Content/MobileResources/HUD/VirtualJoystick_Background.uasset" 545
+"../../../Engine/Content/MobileResources/HUD/VirtualJoystick_Background.uexp" 546
+"../../../Engine/Content/MobileResources/HUD/VirtualJoystick_Thumb.uasset" 547
+"../../../Engine/Content/MobileResources/HUD/VirtualJoystick_Thumb.uexp" 548
+"../../../Engine/Content/MobileResources/HUD/DefaultVirtualJoysticks.uasset" 549
+"../../../Engine/Content/MobileResources/HUD/DefaultVirtualJoysticks.uexp" 550
+"../../../Engine/Content/MobileResources/HUD/LeftVirtualJoystickOnly.uasset" 551
+"../../../Engine/Content/MobileResources/HUD/LeftVirtualJoystickOnly.uexp" 552
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton1_off.uasset" 553
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton1_off.uexp" 554
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton1_on.uasset" 555
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton1_on.uexp" 556
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton2_off.uasset" 557
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton2_off.uexp" 558
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton2_on.uasset" 559
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton2_on.uexp" 560
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton3.uasset" 561
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButton3.uexp" 562
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButtonFire.uasset" 563
+"../../../Engine/Content/MobileResources/HUD/MobileHUDButtonFire.uexp" 564
+"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionPad.uasset" 565
+"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionPad.uexp" 566
+"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionPad2.uasset" 567
+"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionPad2.uexp" 568
+"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionPad3.uasset" 569
+"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionPad3.uexp" 570
+"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionStick.uasset" 571
+"../../../Engine/Content/MobileResources/HUD/MobileHUDDirectionStick.uexp" 572
+"../../../Engine/Content/MobileResources/HUD/T_Castle_ThumbstickInner.uasset" 573
+"../../../Engine/Content/MobileResources/HUD/T_Castle_ThumbstickInner.uexp" 574
+"../../../Engine/Content/MobileResources/HUD/T_Castle_ThumbstickOutter.uasset" 575
+"../../../Engine/Content/MobileResources/HUD/T_Castle_ThumbstickOutter.uexp" 576
+"../../../Engine/Content/Tutorial/ContentIntroCurve.uasset" 577
+"../../../Engine/Content/Tutorial/ContentIntroCurve.uexp" 578
+"../../../Engine/Content/VREditor/LaserPointer/VR_LaserPower_01.uasset" 579
+"../../../Engine/Content/VREditor/LaserPointer/VR_LaserPower_01.uexp" 580
+"../../../Engine/Content/VREditor/LaserPointer/VR_LaserPower_01.ubulk" 581
+"../../../Engine/Content/VREditor/TransformGizmo/TransformGizmoMaterial.uasset" 582
+"../../../Engine/Content/VREditor/TransformGizmo/TransformGizmoMaterial.uexp" 583
+"../../../Engine/Content/VREditor/TransformGizmo/TranslucentTransformGizmoMaterial.uasset" 584
+"../../../Engine/Content/VREditor/TransformGizmo/TranslucentTransformGizmoMaterial.uexp" 585
+"../../../Engine/Content/VREditor/TransformGizmo/BoundingBoxCorner.uasset" 586
+"../../../Engine/Content/VREditor/TransformGizmo/BoundingBoxCorner.uexp" 587
+"../../../Engine/Content/VREditor/TransformGizmo/BoundingBoxEdge.uasset" 588
+"../../../Engine/Content/VREditor/TransformGizmo/BoundingBoxEdge.uexp" 589
+"../../../Engine/Content/VREditor/TransformGizmo/PlaneTranslationHandle.uasset" 590
+"../../../Engine/Content/VREditor/TransformGizmo/PlaneTranslationHandle.uexp" 591
+"../../../Engine/Content/VREditor/TransformGizmo/Xray.uasset" 592
+"../../../Engine/Content/VREditor/TransformGizmo/Xray.uexp" 593
+"../../../Engine/Content/VREditor/TransformGizmo/Main.uasset" 594
+"../../../Engine/Content/VREditor/TransformGizmo/Main.uexp" 595
+"../../../Engine/Content/VREditor/TransformGizmo/SM_Sequencer_Key.uasset" 596
+"../../../Engine/Content/VREditor/TransformGizmo/SM_Sequencer_Key.uexp" 597
+"../../../Engine/Content/VREditor/TransformGizmo/SM_Sequencer_Node.uasset" 598
+"../../../Engine/Content/VREditor/TransformGizmo/SM_Sequencer_Node.uexp" 599
+"../../../Engine/Plugins/2D/Paper2D/Content/PlaceholderTextures/DummySpriteTexture.uasset" 600
+"../../../Engine/Plugins/2D/Paper2D/Content/PlaceholderTextures/DummySpriteTexture.uexp" 601
+"../../../Engine/Plugins/2D/Paper2D/Content/PlaceholderTextures/DummySpriteTexture.ubulk" 602
+"../../../Engine/Plugins/2D/Paper2D/Content/DummySprite.uasset" 603
+"../../../Engine/Plugins/2D/Paper2D/Content/DummySprite.uexp" 604
+"../../../Engine/Plugins/2D/Paper2D/Content/DefaultPaperTerrainMaterial.uasset" 605
+"../../../Engine/Plugins/2D/Paper2D/Content/DefaultPaperTerrainMaterial.uexp" 606
+"../../../Engine/Plugins/2D/Paper2D/Content/DefaultSpriteMaterial.uasset" 607
+"../../../Engine/Plugins/2D/Paper2D/Content/DefaultSpriteMaterial.uexp" 608
+"../../../Engine/Plugins/2D/Paper2D/Content/MaskedUnlitSpriteMaterial.uasset" 609
+"../../../Engine/Plugins/2D/Paper2D/Content/MaskedUnlitSpriteMaterial.uexp" 610
+"../../../Engine/Plugins/2D/Paper2D/Content/OpaqueUnlitSpriteMaterial.uasset" 611
+"../../../Engine/Plugins/2D/Paper2D/Content/OpaqueUnlitSpriteMaterial.uexp" 612
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/ObjectLocalBounds.uasset" 613
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/ObjectLocalBounds.uexp" 614
+"../../../Engine/Content/EngineResources/DefaultTexture.uasset" 615
+"../../../Engine/Content/EngineResources/DefaultTexture.uexp" 616
+"../../../Engine/Content/EngineResources/DefaultTexture.ubulk" 617
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/UVs/BoundingBoxBased_0-1_UVW.uasset" 618
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/UVs/BoundingBoxBased_0-1_UVW.uexp" 619
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/game_wind_noise.uasset" 620
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/game_wind_noise.uexp" 621
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/game_wind_noise.ubulk" 622
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBillboard.uasset" 623
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBillboard.uexp" 624
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/SafeNormalize.uasset" 625
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/SafeNormalize.uexp" 626
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeWindMotion.uasset" 627
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeWindMotion.uexp" 628
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/UnpackDirection.uasset" 629
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/UnpackDirection.uexp" 630
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/UnpackInteger3.uasset" 631
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/UnpackInteger3.uexp" 632
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBranchMotion.uasset" 633
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBranchMotion.uexp" 634
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeWind.uasset" 635
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeWind.uexp" 636
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBillboardMaster.uasset" 637
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeBillboardMaster.uexp" 638
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeCameraFacing.uasset" 639
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeCameraFacing.uexp" 640
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeMaster.uasset" 641
+"../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/SpeedTree9/SpeedTreeMaster.uexp" 642
+"../../../Engine/Content/ArtTools/RenderToTexture/Materials/Debug/M_Emissive_Color.uasset" 643
+"../../../Engine/Content/ArtTools/RenderToTexture/Materials/Debug/M_Emissive_Color.uexp" 644
+"../../../Engine/Content/BasicShapes/Cylinder.uasset" 645
+"../../../Engine/Content/BasicShapes/Cylinder.uexp" 646
+"../../../Engine/Plugins/Lumin/MagicLeapPassableWorld/Content/MagicLeapARPinInfoActor.uasset" 647
+"../../../Engine/Plugins/Lumin/MagicLeapPassableWorld/Content/MagicLeapARPinInfoActor.uexp" 648
+"../../../Engine/Plugins/Runtime/HairStrands/Content/Materials/HairCardsDefaultMaterial.uasset" 649
+"../../../Engine/Plugins/Runtime/HairStrands/Content/Materials/HairCardsDefaultMaterial.uexp" 650
+"../../../Engine/Content/EngineMaterials/HairColorMap.uasset" 651
+"../../../Engine/Content/EngineMaterials/HairColorMap.uexp" 652
+"../../../Engine/Content/EngineMaterials/HairDebugColor.uasset" 653
+"../../../Engine/Content/EngineMaterials/HairDebugColor.uexp" 654
+"../../../Engine/Plugins/Runtime/HairStrands/Content/Materials/HairDebugMaterial.uasset" 655
+"../../../Engine/Plugins/Runtime/HairStrands/Content/Materials/HairDebugMaterial.uexp" 656
+"../../../Engine/Plugins/Runtime/HairStrands/Content/Materials/HairDefaultMaterial.uasset" 657
+"../../../Engine/Plugins/Runtime/HairStrands/Content/Materials/HairDefaultMaterial.uexp" 658
+"../../../Engine/Plugins/Runtime/HairStrands/Content/Materials/HairMeshesDefaultMaterial.uasset" 659
+"../../../Engine/Plugins/Runtime/HairStrands/Content/Materials/HairMeshesDefaultMaterial.uexp" 660
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat4Components.uasset" 661
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat4Components.uexp" 662
+"../../../Engine/Plugins/Runtime/Oculus/OculusVR/Content/Materials/OculusMR_ChromaKey.uasset" 663
+"../../../Engine/Plugins/Runtime/Oculus/OculusVR/Content/Materials/OculusMR_ChromaKey.uexp" 664
+"../../../Engine/Plugins/Runtime/Oculus/OculusVR/Content/Materials/OculusMR_OpaqueColoredMaterial.uasset" 665
+"../../../Engine/Plugins/Runtime/Oculus/OculusVR/Content/Materials/OculusMR_OpaqueColoredMaterial.uexp" 666
+"../../../Engine/Plugins/Runtime/Oculus/OculusVR/Content/Materials/PokeAHoleMaterial.uasset" 667
+"../../../Engine/Plugins/Runtime/Oculus/OculusVR/Content/Materials/PokeAHoleMaterial.uexp" 668
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/1M_Cube.uasset" 669
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/1M_Cube.uexp" 670
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Materials/Collectible.uasset" 671
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Materials/Collectible.uexp" 672
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Collectibles/BP_CollectibleBase.uasset" 673
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Collectibles/BP_CollectibleBase.uexp" 674
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Collectibles/BP_SwordOfUranusCollectible.uasset" 675
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Collectibles/BP_SwordOfUranusCollectible.uexp" 676
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/UI/WB_PlayerHUD.uasset" 677
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/UI/WB_PlayerHUD.uexp" 678
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/TemplateFloor.uasset" 679
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/TemplateFloor.uexp" 680
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/UI/Demo/WBP_SwordTutorial.uasset" 681
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/UI/Demo/WBP_SwordTutorial.uexp" 682
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/RampMaterial.uasset" 683
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/RampMaterial.uexp" 684
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/RightArm_StaticMesh.uasset" 685
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/RightArm_StaticMesh.uexp" 686
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/Ramp_StaticMesh.uasset" 687
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/Ramp_StaticMesh.uexp" 688
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/LeftArm_StaticMesh.uasset" 689
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/LeftArm_StaticMesh.uexp" 690
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/Linear_Stair_StaticMesh.uasset" 691
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/Linear_Stair_StaticMesh.uexp" 692
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Materials/Black.uasset" 693
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Materials/Black.uexp" 694
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/1M_Cube_Chamfer.uasset" 695
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/1M_Cube_Chamfer.uexp" 696
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/Bump_StaticMesh.uasset" 697
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Geometry/Meshes/Bump_StaticMesh.uexp" 698
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_A_jump_root_enemy_A_jump_backwards_end.uasset" 699
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_A_jump_root_enemy_A_jump_backwards_end.uexp" 700
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_A_jump_root_enemy_A_jump_backwards_executing.uasset" 701
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_A_jump_root_enemy_A_jump_backwards_executing.uexp" 702
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_A_jump_root_enemy_A_jump_backwards_start.uasset" 703
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_A_jump_root_enemy_A_jump_backwards_start.uexp" 704
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_A_anim_Anim_root_enemy_A_idle.uasset" 705
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_A_anim_Anim_root_enemy_A_idle.uexp" 706
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_A_anim_Anim_root_enemy_A_run.uasset" 707
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_A_anim_Anim_root_enemy_A_run.uexp" 708
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_A_anim_Anim_root_enemy_A_walk.uasset" 709
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_A_anim_Anim_root_enemy_A_walk.uexp" 710
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/Idle_Walk_Run_BSP.uasset" 711
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/Idle_Walk_Run_BSP.uexp" 712
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_A_AnimBP.uasset" 713
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_A_AnimBP.uexp" 714
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_hit.uasset" 715
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/enemy_big_hit.uexp" 716
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/Montages/AM_EnemyA_PoiseBreak.uasset" 717
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Animations/EnemyBig/Montages/AM_EnemyA_PoiseBreak.uexp" 718
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Weapons/BP_Fists.uasset" 719
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Weapons/BP_Fists.uexp" 720
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Materials/Orange.uasset" 721
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Materials/Orange.uexp" 722
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/EnemyBig/enemy_big_A_anim_PhysicsAsset.uasset" 723
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/EnemyBig/enemy_big_A_anim_PhysicsAsset.uexp" 724
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/EnemyBig/enemy_big_A_anim.uasset" 725
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Characters/EnemyBig/enemy_big_A_anim.uexp" 726
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Enemies/EnemyA/BP_EnemyA.uasset" 727
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Blueprints/Enemies/EnemyA/BP_EnemyA.uexp" 728
+"../../../Engine/Content/EngineSky/C_Sky_Cloud_Color.uasset" 729
+"../../../Engine/Content/EngineSky/C_Sky_Cloud_Color.uexp" 730
+"../../../Engine/Content/EngineSky/C_Sky_Horizon_Color.uasset" 731
+"../../../Engine/Content/EngineSky/C_Sky_Horizon_Color.uexp" 732
+"../../../Engine/Content/EngineSky/C_Sky_Zenith_Color.uasset" 733
+"../../../Engine/Content/EngineSky/C_Sky_Zenith_Color.uexp" 734
+"../../../Engine/Content/EngineSky/T_Sky_Blue.uasset" 735
+"../../../Engine/Content/EngineSky/T_Sky_Blue.uexp" 736
+"../../../Engine/Content/EngineSky/T_Sky_Blue.ubulk" 737
+"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.uasset" 738
+"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.uexp" 739
+"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.ubulk" 740
+"../../../Engine/Content/EngineSky/T_Sky_Stars.uasset" 741
+"../../../Engine/Content/EngineSky/T_Sky_Stars.uexp" 742
+"../../../Engine/Content/EngineSky/T_Sky_Stars.ubulk" 743
+"../../../Engine/Content/EngineSky/M_Sky_Panning_Clouds2.uasset" 744
+"../../../Engine/Content/EngineSky/M_Sky_Panning_Clouds2.uexp" 745
+"../../../Engine/Content/EngineSky/SM_SkySphere.uasset" 746
+"../../../Engine/Content/EngineSky/SM_SkySphere.uexp" 747
+"../../../Engine/Content/EngineSky/BP_Sky_Sphere.uasset" 748
+"../../../Engine/Content/EngineSky/BP_Sky_Sphere.uexp" 749
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Maps/CombatSystemSandbox.uexp" 750
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Maps/CombatSystemSandbox.umap" 751
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/cave_material.uasset" 752
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/cave_material.uexp" 753
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/grass_ncl1_1.uasset" 754
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/grass_ncl1_1.uexp" 755
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/Grass.uasset" 756
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/Grass.uexp" 757
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/rock1_ncl1_1.uasset" 758
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/rock1_ncl1_1.uexp" 759
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/rock1_ncl1_1.ubulk" 760
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/Rock1.uasset" 761
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/Rock1.uexp" 762
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/tree_ncl1_1.uasset" 763
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/tree_ncl1_1.uexp" 764
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/Tree.uasset" 765
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/Tree.uexp" 766
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/wood_ncl1_1.uasset" 767
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/wood_ncl1_1.uexp" 768
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/Wood.uasset" 769
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/Wood.uexp" 770
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/cliff.uasset" 771
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/cliff.uexp" 772
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Assets/cliff.ubulk" 773
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Maps/LevelSketching_BuiltData.uasset" 774
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Maps/LevelSketching_BuiltData.uexp" 775
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Maps/LevelSketching_BuiltData.ubulk" 776
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Maps/LevelSketching.uexp" 777
+"C:/Users/Marco/Documents/Unreal Projects/UEExplore 5.0/Content/Maps/LevelSketching.umap" 778
+"../../../Engine/Content/Maps/Entry_BuiltData.uasset" 779
+"../../../Engine/Content/Maps/Entry_BuiltData.uexp" 780
+"../../../Engine/Content/Maps/Entry.uexp" 781
+"../../../Engine/Content/Maps/Entry.umap" 782
