@@ -2,8 +2,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
-#include "XGameModeBase.generated.h"
+#include "Items/XWeapon.h"
 
+#include "XGameModeBase.generated.h"
 
 UCLASS()
 class EXPLORE_API AXGameModeBase : public AGameModeBase

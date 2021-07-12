@@ -20,17 +20,25 @@ public:
 		ItemType = UXAssetManager::BaseItemType;
 	}
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Item")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FPrimaryAssetType ItemType;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Item")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (AssetBundles = "UI"))
 	FName Name;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Item")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (AssetBundles = "UI"))
 	FName Description;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Abilities")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (AssetBundles = "UI"))
+	UTexture2D* Thumbnail; 
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TArray<TSubclassOf<UXGameplayAbility>> GrantedAbilities;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	TSoftClassPtr<AActor> ActorClass;
 	
 	virtual FPrimaryAssetId GetPrimaryAssetId() const override;
+
+	
 };

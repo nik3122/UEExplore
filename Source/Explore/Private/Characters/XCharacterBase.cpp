@@ -1,4 +1,6 @@
-#include "XCharacterBase.h"
+#include "Characters/XCharacterBase.h"
+
+#include "XGameModeBase.h"
 
 AXCharacterBase::AXCharacterBase()
 {
@@ -28,14 +30,6 @@ void AXCharacterBase::PossessedBy(AController* NewController)
 	if (AbilitySystemComponent)
 	{
 		AbilitySystemComponent->InitAbilityActorInfo(this, this);
-
-		// Adding abilities here somehow causes them to activate twice
-		// (which screws up combos). I'll figure out why, one day. Maybe.
-
-		if (InputComponent)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("We have an InputCompnent: %"), *InputComponent->GetName());
-		}
 	} else
 	{
 		UE_LOG(LogTemp, Warning, TEXT("No ASC at PossessedBy() time"));
@@ -217,3 +211,80 @@ void AXCharacterBase::GrantAbilityFromItem(UXItem* Item)
 	}
 }
 
+AActor* AXCharacterBase::SpawnAttachWeaponActor(const TSubclassOf<AActor> WeaponActorClass)
+{
+	const FVector Loc = FVector(0,0,1000);
+	const FRotator Rotator = FRotator(0,0,0);
+	AActor * SpawnedWeapon = GetWorld()->SpawnActor<AActor>(
+			WeaponActorClass,
+			Loc,
+			Rotator,
+			FActorSpawnParameters());
+	if (SpawnedWeapon)
+	{
+		// Instigator is required to avoid colliding with self.
+		SpawnedWeapon->SetInstigator(this);
+		SpawnedWeapon->AttachToComponent(
+			GetMesh(),
+			FAttachmentTransformRules(EAttachmentRule::SnapToTarget, false),
+			FName("hand_rWeapon"));
+		return SpawnedWeapon;
+	}
+	return nullptr;
+}
+
+void AXCharacterBase::AddSlotItem(UXItem* Item, FXItemSlot InItemSlot)
+{
+	if (Item)
+	{
+		SlottedItems.Emplace(InItemSlot, Item);
+	}
+}
+
+FXItemSlot AXCharacterBase::GetActiveSlot()
+{
+	return ActiveSlot;
+}
+
+void AXCharacterBase::SetActiveSlot(const FXItemSlot Slot)
+{
+	ActiveSlot = Slot;
+}
+
+bool AXCharacterBase::EquipWeaponFromItem(UXWeapon* Weapon)
+{
+	if (Weapon)
+	{
+		const TSubclassOf<AActor> WeaponActorClass = Weapon->ActorClass.LoadSynchronous();
+		if(IsValid(WeaponActorClass))
+		{
+			SpawnAttachWeaponActor(WeaponActorClass);
+			GrantAbilityFromItem(Weapon);
+			return true;
+		}
+	}
+	return false;
+}
+
+bool AXCharacterBase::ActivateAbilitiesWithItemSlot(const FXItemSlot ItemSlot, const bool bAllowRemoteActivation)
+{
+	UXItem* Item = SlottedItems.FindRef(ItemSlot);
+
+	// Weapon Abilities are activated by Input press once equipped.
+	if (Item && Item->ItemType != UXAssetManager::WeaponItemType)
+	{
+		if (!Item->GrantedAbilities.IsEmpty() && AbilitySystemComponent)
+		{
+			for (auto Ability : Item->GrantedAbilities)
+			{
+				AbilitySystemComponent->TryActivateAbilityByClass(Ability, bAllowRemoteActivation);
+			}
+		}
+	}
+	return false;
+}
+
+bool AXCharacterBase::ActivateActiveItemSlot(bool bAllowRemoteActivation)
+{
+	return ActivateAbilitiesWithItemSlot(ActiveSlot, bAllowRemoteActivation);
+}

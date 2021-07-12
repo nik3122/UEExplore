@@ -10,7 +10,9 @@
 #include "Abilities/XAbilitySystemComponent.h"
 #include "Abilities/XGameplayAbility.h"
 #include "GameplayEffect.h"
+#include "XTypes.h"
 #include "Items/Xitem.h"
+#include "Items/XWeapon.h"
 
 #include "XCharacterBase.generated.h"
 
@@ -108,15 +110,51 @@ protected:
 	virtual void StaminaChanged(const FOnAttributeChangeData& Data);
 	virtual void PoiseChanged(const FOnAttributeChangeData& Data);
 
-	/* -------------------------------  **/
+	/* -------------------------------------- */
 	
 	// --------------------------------------
 	//	SLOTTING SYSTEM
 	// --------------------------------------
+	UPROPERTY(BlueprintReadWrite)
+	TMap<FXItemSlot, UXItem*> SlottedItems;
 
+	/* The currently active Slot, used to determine the active Item **/
+	UPROPERTY()
+	FXItemSlot ActiveSlot;
+	
 	UFUNCTION(BlueprintCallable)
 	void GrantAbilityFromItem(UXItem* Item);
 
 	UPROPERTY(BlueprintReadOnly)
-	TMap<FName, FGameplayAbilitySpecHandle> SlottedAbilities;
+	TMap<FXItemSlot, FGameplayAbilitySpecHandle> SlottedAbilities;
+
+	/* Spawn given Weapon Actor and attach it to default weapon socket **/
+	UFUNCTION(BlueprintCallable)
+	AActor* SpawnAttachWeaponActor(TSubclassOf<AActor> WeaponActorClass);
+	
+public:
+	/* Add an Item to SlottedItems (InItemSlot replaces existing ItemSlot if
+	 * has the same ItemType and Index) **/
+	UFUNCTION(BlueprintCallable)
+	void AddSlotItem(UXItem* Item, FXItemSlot InItemSlot);
+
+	/* Get the current Active Slot **/
+	UFUNCTION(BlueprintCallable)
+	FXItemSlot GetActiveSlot();
+
+	/* Set the current Active Slot **/
+	UFUNCTION(BlueprintCallable)
+	void SetActiveSlot(FXItemSlot Slot);
+
+	/* Activate Abilities in given Slot, if exists **/
+	UFUNCTION(BlueprintCallable, Category = "Abilities")
+	bool ActivateAbilitiesWithItemSlot(FXItemSlot ItemSlot, bool bAllowRemoteActivation = true);
+
+	/* Shortcut function to Activate Abilities in the currently active Slot **/
+	UFUNCTION(BlueprintCallable, Category = "Abilities")
+	bool ActivateActiveItemSlot(bool bAllowRemoteActivation = true);
+
+	/* Spawn and attach to default weapon socket the Weapon's ActorClass and grants its abilities **/
+	UFUNCTION(BlueprintCallable)
+	bool EquipWeaponFromItem(UXWeapon* Weapon);
 };

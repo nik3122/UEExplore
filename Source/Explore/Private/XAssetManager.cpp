@@ -5,3 +5,16 @@
 
 const FPrimaryAssetType UXAssetManager::BaseItemType = TEXT("BaseItem");
 const FPrimaryAssetType UXAssetManager::WeaponItemType = TEXT("WeaponItem");
+
+UXAssetManager& UXAssetManager::Get()
+{
+	UXAssetManager* This = Cast<UXAssetManager>(GEngine->AssetManager);
+
+	if (This)
+	{
+		return *This;
+	}
+	else
+	{
+		return *NewObject<UXAssetManager>(); // never calls this
+	}}

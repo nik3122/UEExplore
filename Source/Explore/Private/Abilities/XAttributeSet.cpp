@@ -1,7 +1,7 @@
 #include "Abilities/XAttributeSet.h"
 
 #include "GameplayEffectExtension.h"
-#include "XCharacterBase.h"
+#include "Characters/XCharacterBase.h"
 
 void UXAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data)
 {
