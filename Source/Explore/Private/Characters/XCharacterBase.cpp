@@ -219,14 +219,14 @@ bool AXCharacterBase::TryGrantAbilityFromItem(UXItem* Item)
 					static_cast<int32>(Ability.GetDefaultObject()->InputID),
 					this)
 				);
-				return true;
 			}
 		}
+		return true;
 	}
 	return false;
 }
 
-AActor* AXCharacterBase::SpawnAttachWeaponActor(const TSubclassOf<AActor> WeaponActorClass)
+AActor* AXCharacterBase::AttachWeaponActor(const TSubclassOf<AActor> WeaponActorClass)
 {
 	const FVector Loc = FVector(0,0,1000);
 	const FRotator Rotator = FRotator(0,0,0);
@@ -248,7 +248,7 @@ AActor* AXCharacterBase::SpawnAttachWeaponActor(const TSubclassOf<AActor> Weapon
 	return nullptr;
 }
 
-bool AXCharacterBase::SetSlotItem(FXItemSlot InItemSlot, UXItem* Item)
+bool AXCharacterBase::SetSlottedItem(FXItemSlot InItemSlot, UXItem* Item)
 {
 	if (Item)
 	{
@@ -269,14 +269,14 @@ FXItemSlot AXCharacterBase::GetActiveSlot()
 	return ActiveSlot;
 }
 
-bool AXCharacterBase::SetActiveSlot(FXItemSlot RequestedSlot)
+bool AXCharacterBase::SetActiveSlot(const FXItemSlot ItemSlot)
 {
-	if (SlottedItems.Contains(RequestedSlot))
+	if (SlottedItems.Contains(ItemSlot))
 	{
-		ActiveSlot = RequestedSlot;
+		ActiveSlot = ItemSlot;
 
 		// BP Compatible Event
-		ActiveSlotChanged.Broadcast(RequestedSlot);
+		ActiveSlotChanged.Broadcast(ItemSlot);
 		return true;
 	}
 	return false;
@@ -289,20 +289,20 @@ bool AXCharacterBase::EquipWeaponFromItem(UXWeapon* Weapon)
 		const TSubclassOf<AActor> WeaponActorClass = Weapon->ActorClass.LoadSynchronous();
 		if(IsValid(WeaponActorClass))
 		{
-			SpawnAttachWeaponActor(WeaponActorClass);
+			AttachWeaponActor(WeaponActorClass);
 			return true;
 		}
 	}
 	return false;
 }
 
-void AXCharacterBase::OnActiveSlotChanged(FXItemSlot NewSlot)
+void AXCharacterBase::OnActiveSlotChanged(const FXItemSlot NewItemSlot)
 {
 	// Some Items are equippable and need to actually spawn in the World
 	// upon slot activation, besides granting abilities.
 	if (ActiveSlot.ItemType == UXAssetManager::WeaponItemType)
 	{
-		UXItem* Item = SlottedItems.FindRef(ActiveSlot);
+		UXItem* Item = SlottedItems.FindRef(NewItemSlot);
 		if (Item)
 		{
 			UXWeapon* Weapon = static_cast<UXWeapon*>(Item);
@@ -316,7 +316,7 @@ bool AXCharacterBase::ActivateSlot(const FXItemSlot ItemSlot, const bool bAllowR
 {
 	UXItem* Item = SlottedItems.FindRef(ItemSlot);
 
-	// Weapon Abilities are activated by Input press once equipped.
+	// Weapon Abilities are activated only by Input press once equipped.
 	if (Item && Item->ItemType != UXAssetManager::WeaponItemType)
 	{
 		if (!Item->GrantedAbilities.IsEmpty() && AbilitySystemComponent)
@@ -328,4 +328,19 @@ bool AXCharacterBase::ActivateSlot(const FXItemSlot ItemSlot, const bool bAllowR
 		}
 	}
 	return false;
+}
+
+bool AXCharacterBase::AddToSlottedItems(UXItem* Item)
+{
+	for (const auto Slot: SlottedItems)
+	{
+		if (Slot.Value == nullptr)
+		{
+			SlottedItems.Add(Slot.Key, Item);
+			return true;
+		}
+	}
+
+	return false;
+	
 }

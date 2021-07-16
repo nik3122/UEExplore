@@ -133,27 +133,32 @@ protected:
 	UPROPERTY(BlueprintReadWrite)
 	TMap<FXItemSlot, UXItem*> SlottedItems;
 
-	/* Checks if Character has an ASC and the Item has some one or more abilities to grant.
+	/* Check if Character has an ASC and the Item has some one or more abilities to grant.
 	 * If so, it grants them **/
 	UFUNCTION(BlueprintCallable)
 	bool TryGrantAbilityFromItem(UXItem* Item);
+	
+	/* Equipping a weapon means spawning and attaching the related Weapon Actor
+	 * and granting the Weapon Abilities. **/
+	UFUNCTION(BlueprintCallable)
+	bool EquipWeaponFromItem(UXWeapon* Weapon);
 
 	/* Spawn given Weapon Actor and attach it to default weapon socket **/
 	UFUNCTION(BlueprintCallable)
-	AActor* SpawnAttachWeaponActor(TSubclassOf<AActor> WeaponActorClass);
+	AActor* AttachWeaponActor(TSubclassOf<AActor> WeaponActorClass);
 
 	/* Executes every time the ActiveSlot changes **/
 	UFUNCTION()
-	void OnActiveSlotChanged(FXItemSlot NewSlot);
+	void OnActiveSlotChanged(FXItemSlot NewItemSlot);
 	
 	/* A copy of the current hash key for the TMap holding the currently active Item **/
 	UPROPERTY()
 	FXItemSlot ActiveSlot;
 	
 public:
-	/* Map an existing Slot to an Item, only if the slot exists in SlottedItems **/
+	/* Map an existing Slot to an Item, only if the Slot exists in SlottedItems **/
 	UFUNCTION(BlueprintCallable)
-	bool SetSlotItem(FXItemSlot InItemSlot, UXItem* Item);
+	bool SetSlottedItem(FXItemSlot InItemSlot, UXItem* Item);
 
 	/* Return the current Active Slot, which can be used to activate its Item's abilities. **/
 	UFUNCTION(BlueprintCallable)
@@ -161,13 +166,13 @@ public:
 
 	/* Set the current Active Slot to the requested one, provided it is an existing Key in SlottedItems. **/
 	UFUNCTION(BlueprintCallable)
-	bool SetActiveSlot(FXItemSlot RequestedSlot);
+	bool SetActiveSlot(FXItemSlot ItemSlot);
 	
 	/* Activate Abilities in given Slot, if exists **/
 	UFUNCTION(BlueprintCallable, Category = "Abilities")
 	bool ActivateSlot(FXItemSlot ItemSlot, bool bAllowRemoteActivation = true);
 
-	/* Spawn and attach to default weapon socket the Weapon's ActorClass and grants its abilities **/
+	/* Add or replace an existing Item in SlottedItems. Return false if all SlottedItems are taken, true otherwise. **/
 	UFUNCTION(BlueprintCallable)
-	bool EquipWeaponFromItem(UXWeapon* Weapon);
+	bool AddToSlottedItems(UXItem* Item);
 };
