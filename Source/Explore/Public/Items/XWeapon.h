@@ -13,6 +13,6 @@ public:
 	UXWeapon()
 	{
 		ItemType = UXAssetManager::WeaponItemType;
-	}
+	}		
 };
 

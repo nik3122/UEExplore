@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 
-#include "XTypes.h"
 #include "GameFramework/PlayerController.h"
 #include "XPlayerController.generated.h"
 
@@ -25,6 +24,4 @@ protected:
 
 	UFUNCTION(BlueprintCallable, Category = "Inventory")
 	TArray<UXItem*> GetInventoryItems();
-
-	
 };

@@ -1,9 +1,22 @@
 #include "Characters/XCharacterBase.h"
 
-#include "XGameModeBase.h"
-
 AXCharacterBase::AXCharacterBase()
 {
+	// Create default slots for this Character, with no Items.
+
+	for (int n = 0; n < 5; n++)
+	{
+		 SlottedItems.Add(FXItemSlot(n, UXAssetManager::WeaponItemType), nullptr);	
+	}
+	TArray<FXItemSlot> CreatedSlots;
+	SlottedItems.GetKeys(CreatedSlots);
+
+	if (!CreatedSlots.IsEmpty())
+		ActiveSlot = CreatedSlots[0];
+
+	// Delegate binding
+	ActiveSlotChanged.AddDynamic(this, &AXCharacterBase::OnActiveSlotChanged);
+	
 	// Create the attribute set, this replicates by default
 	AttributeSet = CreateDefaultSubobject<UXAttributeSet>(TEXT("AttributeSet"));
 	AbilitySystemComponent = CreateDefaultSubobject<UXAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
@@ -191,7 +204,7 @@ void AXCharacterBase::HandleDamage(const float Damage)
 		OnDamageTaken(Damage);
 }
 
-void AXCharacterBase::GrantAbilityFromItem(UXItem* Item)
+bool AXCharacterBase::TryGrantAbilityFromItem(UXItem* Item)
 {
 	if (AbilitySystemComponent)
 	{
@@ -206,9 +219,11 @@ void AXCharacterBase::GrantAbilityFromItem(UXItem* Item)
 					static_cast<int32>(Ability.GetDefaultObject()->InputID),
 					this)
 				);
+				return true;
 			}
 		}
 	}
+	return false;
 }
 
 AActor* AXCharacterBase::SpawnAttachWeaponActor(const TSubclassOf<AActor> WeaponActorClass)
@@ -233,12 +248,20 @@ AActor* AXCharacterBase::SpawnAttachWeaponActor(const TSubclassOf<AActor> Weapon
 	return nullptr;
 }
 
-void AXCharacterBase::AddSlotItem(UXItem* Item, FXItemSlot InItemSlot)
+bool AXCharacterBase::SetSlotItem(FXItemSlot InItemSlot, UXItem* Item)
 {
 	if (Item)
 	{
-		SlottedItems.Emplace(InItemSlot, Item);
+		for(auto Slot: SlottedItems)
+		{
+			if (Slot.Key == InItemSlot)
+			{
+				SlottedItems.Emplace(InItemSlot, Item);
+				return true;
+			}
+		}
 	}
+	return false;
 }
 
 FXItemSlot AXCharacterBase::GetActiveSlot()
@@ -246,9 +269,17 @@ FXItemSlot AXCharacterBase::GetActiveSlot()
 	return ActiveSlot;
 }
 
-void AXCharacterBase::SetActiveSlot(const FXItemSlot Slot)
+bool AXCharacterBase::SetActiveSlot(FXItemSlot RequestedSlot)
 {
-	ActiveSlot = Slot;
+	if (SlottedItems.Contains(RequestedSlot))
+	{
+		ActiveSlot = RequestedSlot;
+
+		// BP Compatible Event
+		ActiveSlotChanged.Broadcast(RequestedSlot);
+		return true;
+	}
+	return false;
 }
 
 bool AXCharacterBase::EquipWeaponFromItem(UXWeapon* Weapon)
@@ -259,14 +290,29 @@ bool AXCharacterBase::EquipWeaponFromItem(UXWeapon* Weapon)
 		if(IsValid(WeaponActorClass))
 		{
 			SpawnAttachWeaponActor(WeaponActorClass);
-			GrantAbilityFromItem(Weapon);
 			return true;
 		}
 	}
 	return false;
 }
 
-bool AXCharacterBase::ActivateAbilitiesWithItemSlot(const FXItemSlot ItemSlot, const bool bAllowRemoteActivation)
+void AXCharacterBase::OnActiveSlotChanged(FXItemSlot NewSlot)
+{
+	// Some Items are equippable and need to actually spawn in the World
+	// upon slot activation, besides granting abilities.
+	if (ActiveSlot.ItemType == UXAssetManager::WeaponItemType)
+	{
+		UXItem* Item = SlottedItems.FindRef(ActiveSlot);
+		if (Item)
+		{
+			UXWeapon* Weapon = static_cast<UXWeapon*>(Item);
+			EquipWeaponFromItem(Weapon);
+			TryGrantAbilityFromItem(Weapon);
+		}
+	}
+}
+
+bool AXCharacterBase::ActivateSlot(const FXItemSlot ItemSlot, const bool bAllowRemoteActivation)
 {
 	UXItem* Item = SlottedItems.FindRef(ItemSlot);
 
@@ -282,9 +328,4 @@ bool AXCharacterBase::ActivateAbilitiesWithItemSlot(const FXItemSlot ItemSlot, c
 		}
 	}
 	return false;
-}
-
-bool AXCharacterBase::ActivateActiveItemSlot(bool bAllowRemoteActivation)
-{
-	return ActivateAbilitiesWithItemSlot(ActiveSlot, bAllowRemoteActivation);
 }

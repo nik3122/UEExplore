@@ -9,6 +9,7 @@
 #include "Engine/DataAsset.h"
 #include "XItem.generated.h"
 
+class UXAbilitySystemComponent;
 UCLASS()
 class EXPLORE_API UXItem : public UPrimaryDataAsset
 {
@@ -38,7 +39,5 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TSoftClassPtr<AActor> ActorClass;
 	
-	virtual FPrimaryAssetId GetPrimaryAssetId() const override;
-
-	
+	virtual FPrimaryAssetId GetPrimaryAssetId() const override;	
 };

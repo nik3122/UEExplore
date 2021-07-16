@@ -15,10 +15,10 @@ struct EXPLORE_API FXItemSlot
 		SlotIndex(InSlotIndex),
 		ItemType(InItemType) {};
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 SlotIndex;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FPrimaryAssetType ItemType;
 
 	friend uint32 GetTypeHash(const FXItemSlot& Key)

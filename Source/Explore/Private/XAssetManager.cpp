@@ -4,7 +4,7 @@
 #include "XAssetManager.h"
 
 const FPrimaryAssetType UXAssetManager::BaseItemType = TEXT("BaseItem");
-const FPrimaryAssetType UXAssetManager::WeaponItemType = TEXT("WeaponItem");
+const FPrimaryAssetType UXAssetManager::WeaponItemType = TEXT("Weapon");
 
 UXAssetManager& UXAssetManager::Get()
 {

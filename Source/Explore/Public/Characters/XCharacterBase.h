@@ -16,6 +16,10 @@
 
 #include "XCharacterBase.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSlotItemChanged,  FXItemSlot, Slot);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnActiveSlotChanged, FXItemSlot, ActiveSlot);
+
+
 UCLASS()
 class EXPLORE_API AXCharacterBase : public ACharacter, public IAbilitySystemInterface, public IGameplayTagAssetInterface
 {
@@ -24,7 +28,18 @@ class EXPLORE_API AXCharacterBase : public ACharacter, public IAbilitySystemInte
 public:
 	// Sets default values for this character's properties
 	AXCharacterBase();
+	
+	public:
+	UPROPERTY(BlueprintAssignable)
+	FOnActiveSlotChanged ActiveSlotChanged;
 
+	UPROPERTY(BlueprintAssignable)
+	FOnSlotItemChanged SlotItemChanged;
+
+	/* Specify how many Slots to create upon construction **/
+	UPROPERTY(BlueprintReadOnly, EditAnywhere)
+	int NumberOfDefaultSlots;
+	
 	UFUNCTION(BlueprintCallable)
 	float GetHealth() const;
 
@@ -118,41 +133,39 @@ protected:
 	UPROPERTY(BlueprintReadWrite)
 	TMap<FXItemSlot, UXItem*> SlottedItems;
 
-	/* The currently active Slot, used to determine the active Item **/
-	UPROPERTY()
-	FXItemSlot ActiveSlot;
-	
+	/* Checks if Character has an ASC and the Item has some one or more abilities to grant.
+	 * If so, it grants them **/
 	UFUNCTION(BlueprintCallable)
-	void GrantAbilityFromItem(UXItem* Item);
-
-	UPROPERTY(BlueprintReadOnly)
-	TMap<FXItemSlot, FGameplayAbilitySpecHandle> SlottedAbilities;
+	bool TryGrantAbilityFromItem(UXItem* Item);
 
 	/* Spawn given Weapon Actor and attach it to default weapon socket **/
 	UFUNCTION(BlueprintCallable)
 	AActor* SpawnAttachWeaponActor(TSubclassOf<AActor> WeaponActorClass);
+
+	/* Executes every time the ActiveSlot changes **/
+	UFUNCTION()
+	void OnActiveSlotChanged(FXItemSlot NewSlot);
+	
+	/* A copy of the current hash key for the TMap holding the currently active Item **/
+	UPROPERTY()
+	FXItemSlot ActiveSlot;
 	
 public:
-	/* Add an Item to SlottedItems (InItemSlot replaces existing ItemSlot if
-	 * has the same ItemType and Index) **/
+	/* Map an existing Slot to an Item, only if the slot exists in SlottedItems **/
 	UFUNCTION(BlueprintCallable)
-	void AddSlotItem(UXItem* Item, FXItemSlot InItemSlot);
+	bool SetSlotItem(FXItemSlot InItemSlot, UXItem* Item);
 
-	/* Get the current Active Slot **/
+	/* Return the current Active Slot, which can be used to activate its Item's abilities. **/
 	UFUNCTION(BlueprintCallable)
 	FXItemSlot GetActiveSlot();
 
-	/* Set the current Active Slot **/
+	/* Set the current Active Slot to the requested one, provided it is an existing Key in SlottedItems. **/
 	UFUNCTION(BlueprintCallable)
-	void SetActiveSlot(FXItemSlot Slot);
-
+	bool SetActiveSlot(FXItemSlot RequestedSlot);
+	
 	/* Activate Abilities in given Slot, if exists **/
 	UFUNCTION(BlueprintCallable, Category = "Abilities")
-	bool ActivateAbilitiesWithItemSlot(FXItemSlot ItemSlot, bool bAllowRemoteActivation = true);
-
-	/* Shortcut function to Activate Abilities in the currently active Slot **/
-	UFUNCTION(BlueprintCallable, Category = "Abilities")
-	bool ActivateActiveItemSlot(bool bAllowRemoteActivation = true);
+	bool ActivateSlot(FXItemSlot ItemSlot, bool bAllowRemoteActivation = true);
 
 	/* Spawn and attach to default weapon socket the Weapon's ActorClass and grants its abilities **/
 	UFUNCTION(BlueprintCallable)
