@@ -12,5 +12,6 @@ enum class EAbilityInput : uint8
 	Cancel			UMETA(DisplayName="Cancel"),
 	LightAttack		UMETA(DisplayName="LightAttack"),
 	StrongAttack	UMETA(DisplayName="StrongAttack"),
-	Roll            UMETA(DisplayName="Roll")
+	Roll            UMETA(DisplayName="Roll"),
+	Dash			UMETA(DisplayName="Dash")
 };

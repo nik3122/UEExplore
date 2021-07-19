@@ -2,8 +2,7 @@
 
 AXCharacterBase::AXCharacterBase()
 {
-	// Create default slots for this Character, with no Items.
-
+	// Create default slots for this Character, with no Items.	
 	for (int n = 0; n < 5; n++)
 	{
 		 SlottedItems.Add(FXItemSlot(n, UXAssetManager::WeaponItemType), nullptr);	
@@ -92,6 +91,14 @@ float AXCharacterBase::GetStamina() const
 		return 1.f;
 	return AttributeSet->GetStamina();
 }
+
+AActor* AXCharacterBase::GetEquippedWeapon() const
+{
+	if (EquippedWeapon)
+		return EquippedWeapon;
+	return nullptr;
+}
+
 
 void AXCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -289,7 +296,7 @@ bool AXCharacterBase::EquipWeaponFromItem(UXWeapon* Weapon)
 		const TSubclassOf<AActor> WeaponActorClass = Weapon->ActorClass.LoadSynchronous();
 		if(IsValid(WeaponActorClass))
 		{
-			AttachWeaponActor(WeaponActorClass);
+			EquippedWeapon = AttachWeaponActor(WeaponActorClass);
 			return true;
 		}
 	}

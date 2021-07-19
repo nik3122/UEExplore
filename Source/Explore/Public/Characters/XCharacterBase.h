@@ -36,10 +36,6 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FOnSlotItemChanged SlotItemChanged;
 
-	/* Specify how many Slots to create upon construction **/
-	UPROPERTY(BlueprintReadOnly, EditAnywhere)
-	int NumberOfDefaultSlots;
-	
 	UFUNCTION(BlueprintCallable)
 	float GetHealth() const;
 
@@ -48,6 +44,9 @@ public:
 	
 	UFUNCTION(BlueprintCallable)
 	float GetStamina() const;
+	
+	UFUNCTION(BlueprintCallable)
+	AActor* GetEquippedWeapon() const;
 
 	void HandleDamage(float const Damage);
 
@@ -63,7 +62,11 @@ protected:
 	// Implement IGameplayTagAssetInterface
 	UFUNCTION(BlueprintCallable)
 	virtual void GetOwnedGameplayTags (FGameplayTagContainer & TagContainer) const override;
-
+    
+    /** Pointer to currently equipped weapon */
+	UPROPERTY(BlueprintReadOnly)
+	AActor* EquippedWeapon;
+    
 	/** === Blueprint events for relevant Attribute changes === */ 
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnPoiseBreak();
