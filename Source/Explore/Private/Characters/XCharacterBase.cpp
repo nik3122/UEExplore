@@ -119,21 +119,31 @@ void AXCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 
 }
 
+TArray<FGameplayAbilitySpecHandle> AXCharacterBase::GrantAbilities(TArray<TSubclassOf<UXGameplayAbility>> Abilities)
+{
+	TArray<FGameplayAbilitySpecHandle> GrantedAbilitySpecHandles;
+
+	if (AbilitySystemComponent)
+	{
+		for(auto Ability: Abilities)
+		{
+			if (Ability)
+				GrantedAbilitySpecHandles.Add(AbilitySystemComponent->GiveAbility(
+					FGameplayAbilitySpec(
+						Ability,
+						GetCurrentLevel(),
+						static_cast<int32>(Ability.GetDefaultObject()->InputID),
+						this)));
+		}
+	}
+	return GrantedAbilitySpecHandles;
+}
+
 void AXCharacterBase::AddStartupGameplayAbilities()
 {
 	if (!bAbilitiesInitialized)
 	{
-		for(TSubclassOf<UXGameplayAbility>& GameplayAbility: StartingAbilities)
-		{
-			if (GameplayAbility)
-				AbilitySystemComponent->GiveAbility(
-					FGameplayAbilitySpec(
-						GameplayAbility,
-						GetCurrentLevel(),
-						static_cast<int32>(GameplayAbility.GetDefaultObject()->InputID),
-						this));
-		}
-		bAbilitiesInitialized = true;
+		GrantAbilities(StartingAbilities);
 	}
 }
 
@@ -211,26 +221,9 @@ void AXCharacterBase::HandleDamage(const float Damage)
 		OnDamageTaken(Damage);
 }
 
-bool AXCharacterBase::TryGrantAbilityFromItem(UXItem* Item)
+void AXCharacterBase::TryGrantAbilityFromItem(UXItem* Item)
 {
-	if (AbilitySystemComponent)
-	{
-		for (TSubclassOf<UXGameplayAbility>& Ability : Item->GrantedAbilities)
-		{
-			if (Ability)
-			{
-				AbilitySystemComponent->GiveAbility(
-				FGameplayAbilitySpec(
-					Ability,
-					GetCurrentLevel(),
-					static_cast<int32>(Ability.GetDefaultObject()->InputID),
-					this)
-				);
-			}
-		}
-		return true;
-	}
-	return false;
+	GrantAbilities(Item->GrantedAbilities);
 }
 
 AActor* AXCharacterBase::AttachWeaponActor(const TSubclassOf<AActor> WeaponActorClass)
@@ -305,6 +298,17 @@ bool AXCharacterBase::EquipWeaponFromItem(UXWeapon* Weapon)
 
 void AXCharacterBase::OnActiveSlotChanged(const FXItemSlot NewItemSlot)
 {
+	for (auto Ability: SlottedAbilities)
+	{
+		AbilitySystemComponent->ClearAbility(Ability);
+	}
+	
+	if (EquippedWeapon)
+	{
+		EquippedWeapon->DetachFromActor(FDetachmentTransformRules::KeepRelativeTransform);
+		EquippedWeapon->Destroy();
+	}
+	
 	// Some Items are equippable and need to actually spawn in the World
 	// upon slot activation, besides granting abilities.
 	if (ActiveSlot.ItemType == UXAssetManager::WeaponItemType)
@@ -314,7 +318,8 @@ void AXCharacterBase::OnActiveSlotChanged(const FXItemSlot NewItemSlot)
 		{
 			UXWeapon* Weapon = static_cast<UXWeapon*>(Item);
 			EquipWeaponFromItem(Weapon);
-			TryGrantAbilityFromItem(Weapon);
+			SlottedAbilities.Append(
+				GrantAbilities(Weapon->GrantedAbilities));
 		}
 	}
 }

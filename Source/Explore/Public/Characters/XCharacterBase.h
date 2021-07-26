@@ -106,6 +106,13 @@ protected:
 
 	/** Get current Character level. Mainly used by GAS */
 	static int32 GetCurrentLevel();
+
+	UFUNCTION()
+	TArray<FGameplayAbilitySpecHandle> GrantAbilities(TArray<TSubclassOf<UXGameplayAbility>> Abilities);
+	
+	/** Abilities that are currently granted to this Character because slotted */	
+	UPROPERTY(BlueprintReadOnly)
+	TArray<FGameplayAbilitySpecHandle> SlottedAbilities;
 	
 	/** Get abilities that this character can afford to activate */
 	UFUNCTION(BlueprintCallable)
@@ -139,7 +146,7 @@ protected:
 	/* Check if Character has an ASC and the Item has some one or more abilities to grant.
 	 * If so, it grants them **/
 	UFUNCTION(BlueprintCallable)
-	bool TryGrantAbilityFromItem(UXItem* Item);
+	void TryGrantAbilityFromItem(UXItem* Item);
 	
 	/* Equipping a weapon means spawning and attaching the related Weapon Actor
 	 * and granting the Weapon Abilities. **/
