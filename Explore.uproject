@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.0EA",
+	"EngineAssociation": "5.0",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -24,6 +24,14 @@
 		},
 		{
 			"Name": "GameplayAbilities",
+			"Enabled": true
+		},
+		{
+			"Name": "RiderLink",
+			"Enabled": false
+		},
+		{
+			"Name": "EditorScriptingUtilities",
 			"Enabled": true
 		}
 	]

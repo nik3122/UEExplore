@@ -22,18 +22,3 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "GameplayEffectContainer")
 	TArray<TSubclassOf<UGameplayEffect>> TargetGameplayEffectClasses;
 };
-
-
-/** A "processed" version of RPGGameplayEffectContainer that can be passed around and eventually applied */
-USTRUCT(BlueprintType)
-struct FRPGGameplayEffectContainerSpec
-{
-	GENERATED_BODY()
-
-public:
-	FRPGGameplayEffectContainerSpec() {}
-
-	/** List of gameplay effects to apply to the targets */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "GameplayEffectContainer")
-	TArray<FGameplayEffectSpecHandle> TargetGameplayEffectSpecs;
-};
