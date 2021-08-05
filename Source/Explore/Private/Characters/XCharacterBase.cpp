@@ -144,6 +144,7 @@ void AXCharacterBase::AddStartupGameplayAbilities()
 	if (!bAbilitiesInitialized)
 	{
 		GrantAbilities(StartingAbilities);
+		bAbilitiesInitialized = true;
 	}
 }
 
