@@ -37,13 +37,14 @@ void UXAbilitySystemComponent::GetActiveAbilitiesByTag(const FGameplayTagContain
 {
 	TArray<FGameplayAbilitySpec*> AbilitiesToActivate;
 	GetActivatableGameplayAbilitySpecsByAllMatchingTags(TagContainer, AbilitiesToActivate, false);
-
+	
 	for (FGameplayAbilitySpec* Spec : AbilitiesToActivate)
 	{
 		TArray<UGameplayAbility*> AbilityInstances = Spec->GetAbilityInstances();
 
 		for (UGameplayAbility* ActiveAbility : AbilityInstances)
 		{
+			UE_LOG(LogTemp, Warning, TEXT("%s"), *ActiveAbility->GetClass()->GetName());
 			ActiveAbilities.Add(Cast<UXGameplayAbility>(ActiveAbility));
 		}
 	}
