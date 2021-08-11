@@ -1,5 +1,8 @@
 #include "Characters/XCharacterBase.h"
 
+DEFINE_LOG_CATEGORY(LogXCharacter);
+
+
 AXCharacterBase::AXCharacterBase()
 {
 	// Create default slots for this Character, with no Items.	
@@ -127,13 +130,19 @@ TArray<FGameplayAbilitySpecHandle> AXCharacterBase::GrantAbilities(TArray<TSubcl
 	{
 		for(auto Ability: Abilities)
 		{
-			if (Ability)
+			if (IsValid(Ability))
+			{
 				GrantedAbilitySpecHandles.Add(AbilitySystemComponent->GiveAbility(
 					FGameplayAbilitySpec(
 						Ability,
 						GetCurrentLevel(),
 						static_cast<int32>(Ability.GetDefaultObject()->InputID),
 						this)));
+			}
+			else
+			{
+				UE_LOG(LogXCharacter, Warning, TEXT("Received invalid Ability to grant: "), *Ability->GetClass()->GetName())
+			}
 		}
 	}
 	return GrantedAbilitySpecHandles;
@@ -160,7 +169,9 @@ void AXCharacterBase::InitializeAttributes()
 
 		if (EffectSpecHandle.IsValid())
 		{
-			AbilitySystemComponent->ApplyGameplayEffectSpecToSelf(*EffectSpecHandle.Data.Get());
+			const FActiveGameplayEffectHandle GEHandle = AbilitySystemComponent->ApplyGameplayEffectSpecToSelf(
+				*EffectSpecHandle.Data.Get());
+			ActiveGameplayEffectSpecHandles.Add(GEHandle);
 		}
 	}
 }
@@ -213,6 +224,9 @@ void AXCharacterBase::PoiseChanged(const FOnAttributeChangeData& Data)
 	{
 		// Notify Blueprint so it can handle it however necessary
 		OnPoiseBreak();
+
+		// Restore poise to full
+		AttributeSet->SetPoise(AttributeSet->GetMaxPoise());
 	}
 }
 

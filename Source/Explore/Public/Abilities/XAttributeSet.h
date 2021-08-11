@@ -29,6 +29,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Attributes")
 	FGameplayAttributeData Stamina;
 	ATTRIBUTE_ACCESSORS(UXAttributeSet, Stamina);
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Attributes")
+	FGameplayAttributeData MaxPoise;
+	ATTRIBUTE_ACCESSORS(UXAttributeSet, MaxPoise);
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Attributes")
 	FGameplayAttributeData Poise;

@@ -19,6 +19,7 @@
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSlotItemChanged,  FXItemSlot, Slot);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnActiveSlotChanged, FXItemSlot, ActiveSlot);
 
+DECLARE_LOG_CATEGORY_EXTERN(LogXCharacter, Log, All);
 
 UCLASS()
 class EXPLORE_API AXCharacterBase : public ACharacter, public IAbilitySystemInterface, public IGameplayTagAssetInterface
@@ -88,6 +89,9 @@ protected:
     
     UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = Abilities)
     TSubclassOf<UGameplayEffect> DefaultAttributesEffect;
+
+	UPROPERTY()
+	TArray<FActiveGameplayEffectHandle> ActiveGameplayEffectSpecHandles;
     
 	/** Abilities to grant to this character on creation. These will be activated by tag or event and are not bound to specific inputs */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Abilities)
