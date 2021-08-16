@@ -1,5 +1,7 @@
 #include "Characters/XCharacterBase.h"
 
+#include "GameplayEffectExtension.h"
+
 DEFINE_LOG_CATEGORY(LogXCharacter);
 
 
