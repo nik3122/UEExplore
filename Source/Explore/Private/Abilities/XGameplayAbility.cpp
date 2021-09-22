@@ -41,3 +41,17 @@ FGameplayTag UXGameplayAbility::GetRangeTags() const
 	}
 	return FGameplayTag::EmptyTag;
 }
+
+void UXGameplayAbility::AddGameplayTags(const FGameplayTagContainer GameplayTags)
+{
+	UAbilitySystemComponent* Comp = GetAbilitySystemComponentFromActorInfo();
+
+	Comp->AddLooseGameplayTags(GameplayTags);
+}
+
+void UXGameplayAbility::RemoveGameplayTags(const FGameplayTagContainer GameplayTags)
+{
+	UAbilitySystemComponent* Comp = GetAbilitySystemComponentFromActorInfo();
+
+	Comp->RemoveLooseGameplayTags(GameplayTags);
+}

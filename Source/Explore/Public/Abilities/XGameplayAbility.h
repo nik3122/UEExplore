@@ -38,4 +38,10 @@ public:
 	/** Get tag that describes the range type of this ability */
 	UFUNCTION(BlueprintCallable)
 	FGameplayTag GetRangeTags() const;
+	
+    UFUNCTION(BlueprintCallable, Category = "GameplayAbility")
+    virtual void AddGameplayTags(const FGameplayTagContainer GameplayTags);
+    
+    UFUNCTION(BlueprintCallable, Category = "GameplayAbility")
+    virtual void RemoveGameplayTags(const FGameplayTagContainer GameplayTags);
 };
